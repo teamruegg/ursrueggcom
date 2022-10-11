@@ -58,7 +58,7 @@
 
 		<div class="body">
 			<!-- Header -->
-			<header id="header" class="header-floating-bar" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 116, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+			<header id="header" class="header-floating-bar header-floating-bar-static-sticky" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
 				<div class="header-body bg-color-dark box-shadow-none">
 					<div class="header-container header-container-height-sm container">
 						<div class="header-row">
@@ -66,7 +66,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="../index.html">
-											<img alt="ursruegg | Website" width="25" height="25" src="../img/logos/ursruegg_icon_180x180.png">
+											<img alt="ursruegg | Website" width="40" height="40" src="../img/logos/ursruegg_icon_180x180.png">
 										</a>
 									</div>
 								</div>
@@ -79,12 +79,12 @@
 											<nav class="collapse">
 												<ul class="nav nav-pills" id="mainNav">
 													<li>
-														<a class="nav-link active" href="../index.html">
+														<a class="nav-link" href="../index.html">
 															Home
 														</a>
 													</li>
 													<li class="dropdown">
-														<a class="dropdown-item dropdown-toggle" href="../blog.html">
+														<a class="dropdown-item dropdown-toggle active"  href="../blog.html">
 															Blog
 														</a>
 														<ul class="dropdown-menu">
@@ -101,7 +101,7 @@
 												</ul>
 											</nav>
 										</div>
-										<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex" href="contactme.html">Join</a>
+										<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex" href="../contactme.html">Join</a>
 										<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse" data-bs-target=".header-nav-main nav">
 											<i class="fas fa-bars"></i>
 										</button>
@@ -116,85 +116,275 @@
 			<!-- Main -->
 			<div role="main" class="main">
 
-				<section class="page-header page-header-modern bg-color-light-scale-1 page-header-md">
+				<!-- Container 1 - Intro -->
+				<section class="section section-no-border section-light custom-padding-top-1 mb-0">
 					<div class="container">
-						<div class="row">
-<!-- 							<div class="col-md-12 align-self-center p-static order-2 text-center">
-								<h1 class="text-dark font-weight-bold text-8">Post Full Width</h1>
-								<span class="sub-title text-dark">Check out our Latest News!</span>
-							</div>
-							<div class="col-md-12 align-self-center order-1">
-								<ul class="breadcrumb d-block text-center">
-									<li><a href="#">Home</a></li>
-									<li class="active">Blog</li>
-								</ul>
-							</div> -->
-						</div>
+                        <div class="col-md-12 align-self-center order-1">
+                            <ul class="breadcrumb d-block text-center">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li class="active">Power Platform ALM using GitHub Actions</li>
+                            </ul>
+                        </div>
 					</div>
 				</section>
 
-				<div class="container py-4">
+				<!-- Container 2 - Section -->
+				<section class="section section-tertiary section-no-border m-0">
+					<div class="container py-4">
 
-					<div class="row">
-						<div class="col">
-							<div class="blog-posts single-post">
+						<div class="row">
+							<div class="col">
+								<div class="blog-posts single-post">
 
-								<article class="post post-large blog-single-post border-0 m-0 p-0">
-									<div class="post-image ms-0">
-										<a href="blog-post.html">
-											<img src="../img/blog/wide/blog-11.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
-										</a>
-									</div>
-
-									<div class="post-date ms-0">
-										<span class="day">10</span>
-										<span class="month">Jan</span>
-									</div>
-
-									<div class="post-content ms-0">
-
-										<h2 class="font-weight-semi-bold"><a href="../blog/blogPowerPlatformAlmUsingGithubActions.html">Power Platform ALM using GitHub Actions</a></h2>
-
-										<div class="post-meta">
-											<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
-											<span><i class="far fa-folder"></i> <a href="#">Azure</a>, <a href="#">Design</a> </span>
+									<!-- Container - Article  header-->
+									<article class="post post-large blog-single-post border-0 m-0 p-0">
+										<div class="post-image ms-0">
+											<a href="blog-post.html">
+												<img src="../img/digital/PowerPlatformALMusingGitHubActions/GitHubActions.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+											</a>
 										</div>
 
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus lacus, rutrum sit amet placerat et, bibendum nec mauris. Duis molestie, purus eget placerat viverra, nisi odio gravida sapien, congue tincidunt nisl ante nec tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis, massa fringilla consequat blandit, mauris ligula porta nisi, non tristique enim sapien vel nisl. Suspendisse vestibulum lobortis dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent nec tempus nibh. Donec mollis commodo metus et fringilla. Etiam venenatis, diam id adipiscing convallis, nisi eros lobortis tellus, feugiat adipiscing ante ante sit amet dolor. Vestibulum vehicula scelerisque facilisis. Sed faucibus placerat bibendum. Maecenas sollicitudin commodo justo, quis hendrerit leo consequat ac. Proin sit amet risus sapien, eget interdum dui. Proin justo sapien, varius sit amet hendrerit id, egestas quis mauris.</p>
-										<p>Ut ac elit non mi pharetra dictum nec quis nibh. Pellentesque ut fringilla elit. Aliquam non ipsum id leo eleifend sagittis id a lorem. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam massa mauris, viverra et rhoncus a, feugiat ut sem. Quisque ultricies diam tempus quam molestie vitae sodales dolor sagittis. Praesent commodo sodales purus. Maecenas scelerisque ligula vitae leo adipiscing a facilisis nisl ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-										<p>Curabitur non erat quam, id volutpat leo. Nullam pretium gravida urna et interdum. Suspendisse in dui tellus. Cras luctus nisl vel risus adipiscing aliquet. Phasellus convallis lorem dui. Quisque hendrerit, lectus ut accumsan gravida, leo tellus porttitor mi, ac mattis eros nunc vel enim. Nulla facilisi. Nam non nulla sed nibh sodales auctor eget non augue. Pellentesque sollicitudin consectetur mauris, eu mattis mi dictum ac. Etiam et sapien eu nisl dapibus fermentum et nec tortor.</p>
-										<p>Curabitur nec nulla lectus, non hendrerit lorem. Quisque lorem risus, porttitor eget fringilla non, vehicula sed tortor. Proin enim quam, vulputate at lobortis quis, condimentum at justo. Phasellus nec nisi justo. Ut luctus sagittis nulla at dapibus. Aliquam ullamcorper commodo elit, quis ornare eros consectetur a. Curabitur nulla dui, fermentum sed dapibus at, adipiscing eget nisi. Aenean iaculis vehicula imperdiet. Donec suscipit leo sed metus vestibulum pulvinar. Phasellus bibendum magna nec tellus fringilla faucibus. Phasellus mollis scelerisque volutpat. Ut sed molestie turpis. Phasellus ultrices suscipit tellus, ac vehicula ligula condimentum et.</p>
-										<p>Aenean metus nibh, molestie at consectetur nec, molestie sed nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec euismod urna. Donec gravida pharetra ipsum, non volutpat ipsum sagittis a. Phasellus ut convallis ipsum. Sed nec dui orci, nec hendrerit massa. Curabitur at risus suscipit massa varius accumsan. Proin eu nisi id velit ultrices viverra nec condimentum magna. Ut porta orci quis nulla aliquam at dictum mi viverra. Maecenas ultricies elit in tortor scelerisque facilisis. Mauris vehicula porttitor lacus, vel pretium est semper non. Ut accumsan rhoncus metus non pharetra. Quisque luctus blandit nisi, id tempus tellus pulvinar eu. Nam ornare laoreet mi a molestie. Donec sodales scelerisque congue. </p>
-
-										<div class="post-block mt-5 post-share">
-											<h4 class="mb-3">Share this Post</h4>
-
-											<!-- Go to www.addthis.com/dashboard to customize your tools -->
-											<div class="addthis_inline_share_toolbox"></div>
-											<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60ba220dbab331b0"></script>
-
+										<div class="post-date ms-0">
+											<span class="day">10</span>
+											<span class="month">Jan</span>
 										</div>
 
-										<div class="post-block mt-4 pt-2 post-author">
-											<h4 class="mb-3">Author</h4>
-											<div class="img-thumbnail img-thumbnail-no-borders d-block pb-3">
-												<a href="blog-post.html">
-													<img src="../img/avatars/avatar.jpg" alt="">
-												</a>
+										<div class="post-content ms-0">
+
+											<h2 class="font-weight-semi-bold"><a href="../blog/blogPowerPlatformAlmUsingGithubActions.html">Power Platform ALM using GitHub Actions</a></h2>
+
+											<div class="post-meta">
+												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+												<span><i class="far fa-folder"></i> <a href="#">Azure</a>, <a href="#">Design</a> </span>
 											</div>
-											<p><strong class="name"><a href="#" class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong></p>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui. </p>
+
+											<!-- Container - Article content -->
+
+											<p>For Power Platform ALM we used Power Platform Build Tools for Azure DevOps to establish continuous integration and continuous deployment pipeline. Azure DevOps has his strengths working with internal teams but gets challenging if you want to build app with different externals or a community.</p>
+											<p>Recently we built some Power Apps within our Smart Factory community and want to share and contribute with a broader audience. GitHub was the preferred repository! And of course, we want to establish ALM CI/CD similar as we have it in Azure DevOps.</p>
+											<p>Microsoft launched GitHub Actions for Microsoft Power Platform and it’s relatively straightforward to establish it for you own GitHub repository. Enclose I would like to share on one example “Visitor Management” how we used GitHub Actions and established organization wide action templates for any other repository.</p>
+											<h2>Visitor Management solution</h2>
+											<p>The Visitor Management is a collection of four Power Apps to manage smart factory visitors. We build this apps during a three-day Hackathon with the Swiss Smart Factory team.</p>
+											<p><img src="../img/digital/VisitorManagement/SwissSmartFactoryVisitorManagementApps.png" alt="Welcome Desk and Visitor Management apps" width="500" height="281.25" /></p>
+											<p>Let’s use this solution to implement a healthy application lifecycle management (ALM) using Microsoft Power Platform and GitHub.</p>
+											<h2>Steps</h2>
+											<p>There are six steps to establish the GitHub Action for one repository and to publish those to the organization templates to ne used for all other repositories too.</p>
+											<ol>
+											<li>Create required environments for development, build and production</li>
+											<li>Create the service principal account and give it rights to the environments created</li>
+											<li>Application user creation</li>
+											<li>Create a new GitHub repository</li>
+											<li>Create GitHub workflows using GitHub Actions for Microsoft Power Platform</li>
+											<li>Add the GitHub Actions to the organization templates</li>
+											</ol>
+											<p> </p>
+											<h2>Step 1 - Create required environments for development, build and production</h2>
+											<p>You will need to create, or have access to, three Dataverse environments in your tenant. I recommend establishing some naming conventions to group the artefacts logically and standardize naming for environment, security group, etc.</p>
+											<p>All three environments should have equal configurations, except</p>
+											<table border="0">
+											<tbody>
+											<tr>
+											<td width="91">
+											<p><strong>Environment</strong></p>
+											</td>
+											<td width="178">
+											<p><strong>Development</strong></p>
+											</td>
+											<td width="178">
+											<p><strong>Test</strong></p>
+											</td>
+											<td width="178">
+											<p><strong>Production</strong></p>
+											</td>
+											</tr>
+											<tr>
+											<td width="91">
+											<p>Environment type</p>
+											</td>
+											<td width="178">
+											<p><strong>Staging</strong>, as you might want to be able to copy, backup or reset the environment</p>
+											</td>
+											<td width="178">
+											<p><strong>Staging</strong>, as you might want to be able to copy, backup or reset the environment</p>
+											</td>
+											<td width="178">
+											<p><strong>Production</strong></p>
+											</td>
+											</tr>
+											<tr>
+											<td width="91">
+											<p>Environment URL</p>
+											</td>
+											<td width="178">
+											<p>Use <strong>dev</strong> as a postfix of the production environment name. For example:</p>
+											<p>[production_name]dev.<br />crm[region].dynamics.com</p>
+											</td>
+											<td width="178">
+											<p>Use <strong>test</strong> as a postfix of the production environment name. For example:</p>
+											<p>[production_name]test.<br />crm[region].dynamics.com</p>
+											</td>
+											<td width="178">
+											<p>No postfix. Only production environment name. For example:</p>
+											<p>[production_name].<br />crm[region].dynamics.com</p>
+											</td>
+											</tr>
+											<tr>
+											<td width="91">
+											<p>Security group</p>
+											</td>
+											<td width="178">
+											<p>Assign the Security Group where your developers are member of. For example, [App Name]_Developers</p>
+											</td>
+											<td width="178">
+											<p>Assign the Security Group where your developers are member of. For example, [App Name]_Testers</p>
+											</td>
+											<td width="178">
+											<p>Assign the Security Group where your production users are member of. For example, [App Name]_Users</p>
+											</td>
+											</tr>
+											<tr>
+											<td width="91">
+											<p>Updates</p>
+											</td>
+											<td width="178">
+											<p>Release wave <strong>Off</strong>, as you want to control what apps/resources are deployed.</p>
+											</td>
+											<td width="178">
+											<p>Release wave <strong>Off</strong>, as you want to control what apps/resources are deployed.</p>
+											</td>
+											<td width="178">
+											<p>Release wave <strong>Off</strong>, as you want to control what apps/resources are deployed.</p>
+											</td>
+											</tr>
+											</tbody>
+											</table>
+											<p> </p>
+											<p>To create these three environments …</p>
+											<ol>
+											<li>Sign into the Power Platform admin center with credentials that provide access to a tenant with a minimum 3-GB available capacity (required to create the three environments).</li>
+											<li>Select <strong>Environments</strong> in the navigation area.</li>
+											<li>Select <strong>+ New</strong> to create your first new environment.</li>
+											<li>Apply the required environment configuration for the application.</li>
+											<li>After the environment is created, check under <strong>Resources</strong> - <strong>Dynamics 365 apps</strong> if all solutions are up to date. If not initiate update for each solution who is not up to date.</li>
+											<li>Replay Step 3 – 5 for <strong>test</strong> and <strong>production</strong></li>
+											<li>Final cross check. Go back to the <strong>environment detail</strong> screen of each created environment and check under <strong>Version</strong> the current <strong>Database version</strong>. Those should be equal for all new created environments.<br /><br /><img src="../img/digital/PowerPlatformALMusingGitHubActions/PowerPlatformALMUsingGitHubActions_Step1_Environments.png" alt="" width="500" height="297.3684210526316" /><br /><br /></li>
+											</ol>
+											<h2>Step 2 - Create the service principal account and give it rights to the environments created</h2>
+											<p>Many of the actions require you to connect to a Microsoft Dataverse environment. You can add service principal or user credentials as secrets in your GitHub repository and then use them in the workflow. In our case we are using service principal to establish a connection to the related Microsoft Dataverse environment.</p>
+											<ol>
+											<li>You will need to create an application registration within Azure Active Directory.
+											<ul>
+											<li>Display name: <strong>GitHubActions</strong></li>
+											<li>Supported account types: <strong>My organization only<br /><br /></strong><img src="../img/digital/PowerPlatformALMusingGitHubActions/PowerPlatformALMUsingGitHubActions_Step2_AADAppRegistration.png" alt="" width="500" height="296.9040247678019" /></li>
+											</ul>
+											</li>
+											</ol>
+											<ol start="2">
+											<li>Upon creation of the application registration, please note and save the <strong>Directory (tenant) ID</strong> and the of the application.</li>
+											<li>On the navigation panel of the <strong>Overview</strong> page, select <strong>API permissions</strong>.</li>
+											<li>Choose + Add a permission<strong> Application (client) ID</strong>, and in the Microsoft APIs tab, Choose <strong>Dynamics CRM</strong>.</li>
+											<li>In the <strong>Request API permissions form</strong>, select <strong>Delegated permissions</strong>, check <strong>user_impersonation</strong>, and then choose <strong>Add permissions</strong>.</li>
+											<li>From the <strong>Request API permissions form</strong>, choose <strong>PowerApps Runtime Service</strong>, select <strong>Delegated permissions</strong>, check <strong>user_impersonation</strong>, and then choose <strong>Add permissions</strong>.</li>
+											<li>From the <strong>Request API permissions form</strong>, choose <strong>APIs my organization uses</strong>, search for "PowerApps-Advisor" using the search field, select <strong>PowerApps-Advisor</strong> in the results list, select <strong>Delegated permissions</strong>, check <strong>Analysis</strong>. All rights, and then choose <strong>Add permissions</strong>.<br /><br /><img src="../img/digital/PowerPlatformALMusingGitHubActions/PowerPlatformALMUsingGitHubActions_Step2_CertificatesAndSecrets.png" alt="" width="500" height="296.4396284829722" /><br /><br /></li>
+											<li>Next, proceed to create a client secret, in the navigation panel, select <strong>Certificates &amp; secrets</strong>.</li>
+											<li>Below <strong>Client secrets</strong>, select + <strong>New client secret</strong>.</li>
+											<li>In the form, enter a description and select <strong>Add</strong>. Record the secret string, you will not be able view the secret again once you leave the form.<br /><br /><img src="../img/digital/PowerPlatformALMusingGitHubActions/PowerPlatformALMUsingGitHubActions_Step2_ConfiguredPermissions.png" alt="" width="500" height="296.59442724458205" /></li>
+											</ol>
+											<h2>Step 3 - Application user creation</h2>
+											<p>In order for the GitHub workflow to deploy solutions as part of a CI/CD pipeline an "Application user" needs to be given access to the environment. An "Application user" represents an unlicensed user that is authenticated using the application registration completed in the prior steps.</p>
+											<ol>
+											<li>Navigate to your Dataverse environment (https://[org].crm[region].dynamics.com).</li>
+											<li>Navigate to <strong>Settings &gt; Security &gt; Users</strong>.</li>
+											<li>Select the link <strong>app users list</strong>.</li>
+											<li>Application user list</li>
+											<li>Select + <strong>new</strong> <strong>app user</strong>. A panel will open on the right hand side of the screen.</li>
+											<li>Select <strong>+ Add an app</strong>. A list of all the application registrations in your Azure AD tenant is shown. Proceed to select the application name <strong>GitHubActions</strong> from the list of registered apps.</li>
+											<li>Under <strong>Business unit</strong>, in the drop-down box, select your environment as the business unit.</li>
+											<li>Under <strong>Security roles</strong>, select <strong>System administrator</strong>, and then select <strong>create</strong>. This will allow the service principal access to the environment.</li>
+											<li>Repeat Step 1 – 8 for <strong>test</strong> and <strong>production<br /><br /><img src="../img/digital/PowerPlatformALMusingGitHubActions/powerplatformalmusinggithubactions_step3_githubactions.png" alt="" width="500" height="297.3684210526316" /><br /></strong></li>
+											</ol>
+											<p> </p>
+											<p>Now that you have created and configured the service principal for all environments and are ready to develop your solution within the development environment. I skip this step as we have our Visitor Management solution and proceed directly to the next step configuring your GitHub Workflows within your GitHub Repository.</p>
+											<h2>Step 4 - Create a new GitHub repository</h2>
+											<p>Create your new repository and name it “<strong>Your application name</strong>”. Make sure you select <strong>Add a README file </strong>to initiate the repo and choose <strong>Create repository</strong>. In our case we created “VisitorManagement” repository.</p>
+											<p>Create a new secret to be used by GitHub Actions. We need to have the following secrets to be referenced within our GitHub Actions workflows:</p>
+											<ul>
+											<li><strong>Password</strong>, for the username you are using to connect to Microsoft Power Platform</li>
+											<li><strong>PowerPlatformSPN</strong>, for the Service Principal Authentication</li>
+											<li><strong>ClientID</strong>, for the Application (client) ID reference</li>
+											<li><strong>TentantID</strong>, for the Directory (tenant) ID reference</li>
+											<li><strong>DevEnvironmentUrl</strong>, for the development environment link reference</li>
+											<li><strong>BuildEnvironmentUrl</strong>, for the build and test environment link reference</li>
+											<li><strong>ProdEnvironmentUrl</strong>, for the production environment link reference</li>
+											</ul>
+											<p> </p>
+											<ol>
+											<li>Navigate to the repo from the link in the import wizard and select <strong>Settings</strong>, navigate to <strong>Secrets</strong>, and then click <strong>New secret</strong>.</li>
+											<li>On the secrets page, name the secret ‘password’. Type the password for the username you are using to connect to Microsoft Power Platform into the <strong>Value</strong> field and select Add <strong>secret</strong>. The password will be referenced in the YML files used to define the GitHub workflows later.</li>
+											<li>Repeat Step 1 – 2 for all other secrets, <strong>PowerPlatformSPN, ClientID, TenantID, DevEnvironmentUrl, BuildEnvironmentUrl </strong>and <strong>ProdEnvironmentUrl</strong>.<br /><br /><img src="../img/digital/PowerPlatformALMusingGitHubActions/powerplatformalmusinggithubactions_step4_githubcreatenewsecrets.png" alt="" width="500" height="297.85247432306255" /></li>
+											</ol>
+											<h2>Step 5 - Create GitHub workflows using GitHub Actions for Microsoft Power Platform</h2>
+											<p>The workflows can automatically export your app (as an unmanaged solution) from a development environment, generate a build artifact (managed solution), and deploy the app into your production environment.</p>
+											<p>Create a workflow to export and unpack the solution file to a new branch</p>
+											<ol>
+											<li>Select <strong>Actions</strong> and then <strong>set up a workflow yourself</strong>. This will start a new YML file with a basic workflow to help you get started with GitHub Actions.</li>
+											<li>Delete the pre-created content, paste the content from the export-and-branch-solution.yml file, and then rename the file to ‘export-and-branch-solution’.yml.</li>
+											<li>Update under solution_name: &gt; default: &lt;SOLUTION&gt; with the Name of your solution.</li>
+											<li>You are now ready to commit your changes. Select <strong>Start commit</strong>, type <strong>export-and-branch-solution.yml</strong> in the title field, and then add a description (optional). Next, click <strong>Commit new file</strong>.</li>
+											<li>Test the export and unpack workflow. Next, test that the workflow runs. Navigate to <strong>Actions</strong>, <strong>Run workflow</strong>, and choose <strong>Run workflow</strong>. If you have a different solution name than “VisitorManagement” then change the value here but leave the other values as is.</li>
+											<li>After 5–10 seconds the workflow will start, and you can select the running workflow to monitor progress.</li>
+											<li>After the workflow has completed, validate that a new branch has been created with the solution unpacked to the solutions/VisitorManagement folder. Select <strong>Code</strong> and then <strong>Branches</strong>.</li>
+											<li>Select the branch that was created by the action.</li>
+											<li>Validate that the solutions/ VisitorManagement folder has been created in the new branch and then create a pull request to merge the changes into the main branch. Click <strong>Pull request</strong>.</li>
+											<li>In the <strong>Open a pull request form</strong>, add a title and description (optional), and then choose <strong>Create pull request</strong>.</li>
+											<li>You are then presented with the pull request summary. Confirm that the branch has no conflicts with the main branch and that the changes can be merged into the main branch automatically. Select <strong>Squash and merge</strong> and then <strong>Confirm squash and merge</strong>.</li>
+											<li>Navigate back to the main branch and validate the solution is now available there as well.</li>
+											</ol>
+											<p> </p>
+											<p>Create a workflow to generate a build artifact and import to production. Now we will create an additional workflow that:</p>
+											<ul>
+											<li>Creates a managed solution and publishes it as a GitHub artifact</li>
+											<li>Imports the build artifact into the production environment</li>
+											</ul>
+											<ol>
+											<li>Navigate to <strong>Actions</strong> and select <strong>New workflow</strong>.</li>
+											<li>Chose <strong>setup a workflow yourself</strong>.</li>
+											<li>Rename the title of the workflow to ‘release-solution-to-prod’ and copy the content from the release-solution-to-prod.yml file and paste it into the <strong>Edit new file</strong></li>
+											<li>Update under solution_name: &gt; default: &lt;SOLUTION&gt; with the Name of your solution.</li>
+											<li>Commit the changes. Choose <strong>Start commit</strong> and then add a title and description (optional). Next, select <strong>Commit new file</strong>.</li>
+											<li>Test the release to production workflow. You are now ready to test the last workflow. This workflow is triggered when a new release is deployed to production.</li>
+											<li>Navigate to <strong>Releases</strong>.</li>
+											<li>Select <strong>Draft a new release</strong>.</li>
+											<li>Add a release tag, a title, and choose <strong>Publish release</strong>.</li>
+											<li>Select <strong>Actions</strong> to view the running workflow.</li>
+											<li>Choose the running workflow to view the actions as they run.</li>
+											<li>Wait for each action to complete.</li>
+											<li>After the workflow has completed, log into your production environment and validate that the solution has been deployed as a managed solution.<br /><br /><img src="../img/digital/PowerPlatformALMusingGitHubActions/powerplatformalmusinggithubactions_step5_buildsolutionresult.png" alt="" width="500" height="277.38242574257424"  /><br /><br /></li>
+											</ol>
+											<p> </p>
+
+											<!-- Container - Article footer -->
+											<div class="post-block mt-4 pt-2 post-author">
+												<h4 class="mb-3">Author</h4>
+												<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+													<a href="../aboutme.html">
+														<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+													</a>
+												</div>
+												<p><strong class="name"><a href="../aboutme.html" class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong></p>
+												<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+											</div>
+											
 										</div>
-										
+									</article>
 
-									</div>
-								</article>
-
+								</div>
 							</div>
 						</div>
-					</div>
 
-				</div>
+					</div>
+				</section>
 
 			</div>
 
@@ -204,8 +394,9 @@
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
-								<li class="social-icons-twitter"><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i class="fab fa-twitter text-2"></i></a></li>
-								<li class="social-icons-linkedin"><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in text-2"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in text-2"></i></a></li>
+                                <li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i class="fab fa-github text-2"></i></a></li>
+								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i class="fab fa-twitter text-2"></i></a></li>
 							</ul>
 							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
 						</div>

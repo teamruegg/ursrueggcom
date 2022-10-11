@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="sticky-header-reveal">
 	<head>
 
 		<!-- Basic -->
@@ -55,11 +55,11 @@
 		<script src="vendor/modernizr/modernizr.min.js"></script>
 
 	</head>
-	<body data-plugin-page-transition>
+	<body>
 
 		<div class="body">
 			<!-- Header -->
-			<header id="header" class="header-floating-bar" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 116, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+			<header id="header" class="header-floating-bar header-floating-bar-static-sticky" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
 				<div class="header-body bg-color-dark box-shadow-none">
 					<div class="header-container header-container-height-sm container">
 						<div class="header-row">
@@ -67,7 +67,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="index.html">
-											<img alt="ursruegg | Website" width="25" height="25" src="img/logos/ursruegg_icon_180x180.png">
+											<img alt="ursruegg | Website" width="40" height="40" src="img/logos/ursruegg_icon_180x180.png">
 										</a>
 									</div>
 								</div>
@@ -80,12 +80,12 @@
 											<nav class="collapse">
 												<ul class="nav nav-pills" id="mainNav">
 													<li>
-														<a class="nav-link active" href="index.html">
+														<a class="nav-link" href="index.html">
 															Home
 														</a>
 													</li>
 													<li class="dropdown">
-														<a class="dropdown-item dropdown-toggle" href="blog.html">
+														<a class="dropdown-item dropdown-toggle active"  href="blog.html">
 															Blog
 														</a>
 														<ul class="dropdown-menu">
@@ -116,266 +116,280 @@
 
 			<div role="main" class="main">
 
-				<!-- Container 1 - Intro pictures -->
+				<!-- Container 1 - Intro -->
 				<section class="section section-no-border section-light custom-padding-top-1 mb-0">
 					<div class="container">
+						<div class="col-md-12 align-self-center order-1">
+                            <ul class="breadcrumb d-block text-center">
+                                <li><a href="../index.html">Home</a></li>
+                                <li class="active">Blog</li>
+                            </ul>
+                        </div>
+
 						<div class="row mt-4">
-							<div class="col-md-7 col-lg-9">
+							<div class="col">
 								<h1 class="font-weight-bold text-color-primary mb-0">Get digitally inspired</h1>
-								<h4 class="font-weight-bold text-color-quaternary">Check out our Latest News!</h4>
-								<p>Welcome to my digital passion blog to get inspired in «The Art of Possible» and the «Digital Infinity» using Microsoft Cloud services.</p>
+								<h4 class="font-weight-bold text-color-quaternary">Check out our latest news!</h4>
+								<p>Welcome to my digital passion blog to get inspired in <strong>«The Art of Possible»</strong> and the <strong>«Digital Infinity»</strong> using Microsoft Cloud services.</p>
 								<p>Since 2000 I was leading and delivering more than 25 Customer Engagement, 12 Custom Development and 8 Infrastructure projects and now back at Microsoft to inspire and drive our Customer’s Digital Transformation Journey.</p>
 							</div>
 						</div>
 					</div>
 				</section>
 
-				<div class="container py-4">
+				<!-- Container 2 - Section -->
+				<section class="section section-tertiary section-no-border m-0">
+					<div class="container py-4">
 
-					<div class="row">
-						<div class="col-lg-3 order-lg-2">
-							<aside class="sidebar">
-								<!-- Search -->
-<!-- 								<form action="page-search-results.html" method="get">
-									<div class="input-group mb-3 pb-1">
-										<input class="form-control text-1" placeholder="Search..." name="s" id="s" type="text">
-										<button type="submit" class="btn btn-dark text-1 p-2"><i class="fas fa-search m-2"></i></button>
-									</div>
-								</form> -->
+						<div class="row">
 
-								<!-- Caterories -->
-								<h5 class="font-weight-semi-bold pt-4">Categories</h5>
-								<ul class="nav nav-list flex-column mb-5">
-									<li class="nav-item"><a class="nav-link" href="#">Hobby</a></li>
-									<li class="nav-item">
-										<a class="nav-link active" href="#">Digital</a>
-										<ul>
-											<li class="nav-item"><a class="nav-link" href="#">AI</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">Azure</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">DevOps</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">Dynamics</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">IoT</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">Mixed Reality</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">Power Platform</a></li>
-											<li class="nav-item"><a class="nav-link" href="#">Smart Factory</a></li>
-										</ul>
-									</li>
-								</ul>
+							<!-- Container 3 - Right Side -->
+							<div class="col-lg-3 order-lg-2">
+								<aside class="sidebar">
+									<!-- Search -->
+	<!-- 								<form action="page-search-results.html" method="get">
+										<div class="input-group mb-3 pb-1">
+											<input class="form-control text-1" placeholder="Search..." name="s" id="s" type="text">
+											<button type="submit" class="btn btn-dark text-1 p-2"><i class="fas fa-search m-2"></i></button>
+										</div>
+									</form> -->
 
-								<!-- Popular / Recent -->
-<!-- 								<div class="tabs tabs-dark mb-4 pb-2">
-									<ul class="nav nav-tabs">
-										<li class="nav-item"><a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-bs-toggle="tab">Popular</a></li>
-										<li class="nav-item"><a class="nav-link text-1 font-weight-bold text-uppercase" href="#recentPosts" data-bs-toggle="tab">Recent</a></li>
+									<!-- Caterories -->
+									<h5 class="font-weight-semi-bold pt-4">Categories</h5>
+									<ul class="nav nav-list flex-column mb-5">
+										<li class="nav-item"><a class="nav-link" href="#">Hobby</a></li>
+										<li class="nav-item">
+											<a class="nav-link active" href="#">Digital</a>
+											<ul>
+												<li class="nav-item"><a class="nav-link" href="#">AI</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">Azure</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">DevOps</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">Dynamics</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">IoT</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">Mixed Reality</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">Power Platform</a></li>
+												<li class="nav-item"><a class="nav-link" href="#">Smart Factory</a></li>
+											</ul>
+										</li>
 									</ul>
-									<div class="tab-content">
-										<div class="tab-pane active" id="popularPosts">
-											<ul class="simple-post-list">
-												<li>
-													<div class="post-image">
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<a href="blog-post.html">
-																<img src="img/blog/square/blog-11.jpg" width="50" height="50" alt="">
-															</a>
+
+									<!-- Popular / Recent -->
+	<!-- 								<div class="tabs tabs-dark mb-4 pb-2">
+										<ul class="nav nav-tabs">
+											<li class="nav-item"><a class="nav-link show active text-1 font-weight-bold text-uppercase" href="#popularPosts" data-bs-toggle="tab">Popular</a></li>
+											<li class="nav-item"><a class="nav-link text-1 font-weight-bold text-uppercase" href="#recentPosts" data-bs-toggle="tab">Recent</a></li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane active" id="popularPosts">
+												<ul class="simple-post-list">
+													<li>
+														<div class="post-image">
+															<div class="img-thumbnail img-thumbnail-no-borders d-block">
+																<a href="blog-post.html">
+																	<img src="img/blog/square/blog-11.jpg" width="50" height="50" alt="">
+																</a>
+															</div>
 														</div>
-													</div>
-													<div class="post-info">
-														<a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
-														<div class="post-meta">
-															 Nov 10, 2022
+														<div class="post-info">
+															<a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
+															<div class="post-meta">
+																Nov 10, 2022
+															</div>
 														</div>
-													</div>
-												</li>
-												<li>
-													<div class="post-image">
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<a href="blog-post.html">
-																<img src="img/blog/square/blog-24.jpg" width="50" height="50" alt="">
-															</a>
+													</li>
+													<li>
+														<div class="post-image">
+															<div class="img-thumbnail img-thumbnail-no-borders d-block">
+																<a href="blog-post.html">
+																	<img src="img/blog/square/blog-24.jpg" width="50" height="50" alt="">
+																</a>
+															</div>
 														</div>
-													</div>
-													<div class="post-info">
-														<a href="blog-post.html">Vitae Nibh Un Odiosters</a>
-														<div class="post-meta">
-															 Nov 10, 2022
+														<div class="post-info">
+															<a href="blog-post.html">Vitae Nibh Un Odiosters</a>
+															<div class="post-meta">
+																Nov 10, 2022
+															</div>
 														</div>
-													</div>
-												</li>
-												<li>
-													<div class="post-image">
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<a href="blog-post.html">
-																<img src="img/blog/square/blog-42.jpg" width="50" height="50" alt="">
-															</a>
+													</li>
+													<li>
+														<div class="post-image">
+															<div class="img-thumbnail img-thumbnail-no-borders d-block">
+																<a href="blog-post.html">
+																	<img src="img/blog/square/blog-42.jpg" width="50" height="50" alt="">
+																</a>
+															</div>
 														</div>
-													</div>
-													<div class="post-info">
-														<a href="blog-post.html">Odiosters Nullam Vitae</a>
-														<div class="post-meta">
-															 Nov 10, 2022
+														<div class="post-info">
+															<a href="blog-post.html">Odiosters Nullam Vitae</a>
+															<div class="post-meta">
+																Nov 10, 2022
+															</div>
 														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="tab-pane" id="recentPosts">
+												<ul class="simple-post-list">
+													<li>
+														<div class="post-image">
+															<div class="img-thumbnail img-thumbnail-no-borders d-block">
+																<a href="blog-post.html">
+																	<img src="img/blog/square/blog-24.jpg" width="50" height="50" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="post-info">
+															<a href="blog-post.html">Vitae Nibh Un Odiosters</a>
+															<div class="post-meta">
+																Nov 10, 2022
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="post-image">
+															<div class="img-thumbnail img-thumbnail-no-borders d-block">
+																<a href="blog-post.html">
+																	<img src="img/blog/square/blog-42.jpg" width="50" height="50" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="post-info">
+															<a href="blog-post.html">Odiosters Nullam Vitae</a>
+															<div class="post-meta">
+																Nov 10, 2022
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="post-image">
+															<div class="img-thumbnail img-thumbnail-no-borders d-block">
+																<a href="blog-post.html">
+																	<img src="img/blog/square/blog-11.jpg" width="50" height="50" alt="">
+																</a>
+															</div>
+														</div>
+														<div class="post-info">
+															<a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
+															<div class="post-meta">
+																Nov 10, 2022
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div> -->
+									
+								</aside>
+							</div>
+
+							<!-- Container 3 - Main -->
+							<div class="col-lg-9 order-lg-1">
+								<!-- List of all blog posts -->
+								<div class="blog-posts">
+
+									<div class="row px-3">
+
+										<!-- Blog post article overview -->
+										<div class="col-sm-6">
+											<article class="post post-medium  border-0 pb-0 mb-5">
+												<div class="post-image">
+													<a href="../blog/blogPowerPlatformAlmUsingGithubActions.html">
+														<img src="img/digital/PowerPlatformALMusingGitHubActions/GitHubActions.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+													</a>
+												</div>
+												<p></p>
+												<div class="post-date">
+													<span class="day">20</span>
+													<span class="month">Dec</span>
+												</div>
+			
+												<div class="post-content">
+			
+													<h2 class="font-weight-semibold text-6 line-height-3 mb-3"><a href="../blog/blogPowerPlatformAlmUsingGithubActions.html">Power Platform ALM using GitHub Actions</a></h2>
+													<p>For Power Platform ALM we used Power Platform Build Tools for Azure DevOps to establish continuous integration and continuous deployment pipeline. Azure DevOps has his strengths working with internal teams but gets challenging if you want to build app with different externals or a community. [...]</p>
+			
+													<div class="post-meta">
+														<span><i class="far fa-user"></i> By <a href="aboutme.html">Urs Rüegg</a> </span>
+														<span><i class="far fa-folder"></i> 
+															<a href="#">DevOps</a>, 
+															<a href="#">Dynamics</a>, 
+															<a href="#">Power Platform</a>, 
+															<a href="#">Smart Factory</a> 
+														</span>
+
+														<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="../blog/blogPowerPlatformAlmUsingGithubActions.html" class="btn btn-xs btn-dark text-1 text-uppercase">Read More</a></span>
 													</div>
-												</li>
+			
+												</div>
+											</article>
+										</div>
+
+										<!-- Blog post article overview -->
+										<div class="col-sm-6">
+											<article class="post post-medium  border-0 pb-0 mb-5">
+												<div class="post-image">
+													<a href="../blog/blogVisitorManagement.html">
+														<img src="img/digital/VisitorManagement/SwissSmartFactoryVisitorManagementApps.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+													</a>
+												</div>
+												<p></p>
+												<div class="post-date">
+													<span class="day">21</span>
+													<span class="month">Sep</span>
+												</div>
+			
+												<div class="post-content">
+			
+													<h2 class="font-weight-semibold text-6 line-height-3 mb-3"><a href="../blog/blogVisitorManagement.html">Hackathon - Visitor Management app</a></h2>
+													<p>The Visitor Management is a collection of four Power Apps to manage smart factory visitors. 
+
+														<li>Visitor Welcome Desk app located at the entry point of the factory floor</li>
+														<li>Visitor Self Registration app on a tablet device</li>
+														<li>Visitor Management app to manage visits</li>
+														<li>Visitor Mixed Reality app to confirm mixed reality competency</li>
+														We build this apps during a <strong>three day Hackathon</strong> with the Swiss Smart Factory team.
+														
+														
+														[...]</p>
+			
+													<div class="post-meta">
+														<span><i class="far fa-user"></i> By <a href="aboutme.html">Urs Rüegg</a> </span>
+														<span><i class="far fa-folder"></i> 
+															<a href="#">AI</a>, 
+															<a href="#">Power Platform</a>, 
+															<a href="#">Smart Factory</a> 
+														</span>
+
+														<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="../blog/blogVisitorManagement.html" class="btn btn-xs btn-dark text-1 text-uppercase">Read More</a></span>
+													</div>
+			
+												</div>
+											</article>
+										</div>
+
+									</div>
+
+									<!-- Page navigation -->
+	<!-- 								<div class="row">
+										<div class="col">
+											<ul class="pagination float-end">
+												<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+												<li class="page-item active"><a class="page-link" href="#">1</a></li>
+												<li class="page-item"><a class="page-link" href="#">2</a></li>
+												<li class="page-item"><a class="page-link" href="#">3</a></li>
+												<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
 											</ul>
 										</div>
-										<div class="tab-pane" id="recentPosts">
-											<ul class="simple-post-list">
-												<li>
-													<div class="post-image">
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<a href="blog-post.html">
-																<img src="img/blog/square/blog-24.jpg" width="50" height="50" alt="">
-															</a>
-														</div>
-													</div>
-													<div class="post-info">
-														<a href="blog-post.html">Vitae Nibh Un Odiosters</a>
-														<div class="post-meta">
-															 Nov 10, 2022
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="post-image">
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<a href="blog-post.html">
-																<img src="img/blog/square/blog-42.jpg" width="50" height="50" alt="">
-															</a>
-														</div>
-													</div>
-													<div class="post-info">
-														<a href="blog-post.html">Odiosters Nullam Vitae</a>
-														<div class="post-meta">
-															 Nov 10, 2022
-														</div>
-													</div>
-												</li>
-												<li>
-													<div class="post-image">
-														<div class="img-thumbnail img-thumbnail-no-borders d-block">
-															<a href="blog-post.html">
-																<img src="img/blog/square/blog-11.jpg" width="50" height="50" alt="">
-															</a>
-														</div>
-													</div>
-													<div class="post-info">
-														<a href="blog-post.html">Nullam Vitae Nibh Un Odiosters</a>
-														<div class="post-meta">
-															 Nov 10, 2022
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div> -->
-								
-							</aside>
-						</div>
-						<div class="col-lg-9 order-lg-1">
-							<!-- List of all blog posts -->
-							<div class="blog-posts">
-
-								<div class="row px-3">
-
-									<!-- Blog post article overview -->
-									<div class="col-sm-6">
-										<article class="post post-medium  border-0 pb-0 mb-5">
-											<div class="post-image">
-												<a href="../blog/blogPowerPlatformAlmUsingGithubActions.html">
-													<img src="img/digital/PowerPlatformALMusingGitHubActions/GitHubActions.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
-												</a>
-											</div>
-											<p></p>
-											<div class="post-date">
-												<span class="day">20</span>
-												<span class="month">Dec</span>
-											</div>
-		
-											<div class="post-content">
-		
-												<h2 class="font-weight-semibold text-6 line-height-3 mb-3"><a href="../blog/blogPowerPlatformAlmUsingGithubActions.html">Power Platform ALM using GitHub Actions</a></h2>
-												<p>For Power Platform ALM we used Power Platform Build Tools for Azure DevOps to establish continuous integration and continuous deployment pipeline. Azure DevOps has his strengths working with internal teams but gets challenging if you want to build app with different externals or a community. [...]</p>
-		
-												<div class="post-meta">
-													<span><i class="far fa-user"></i> By <a href="aboutme.html">Urs Rüegg</a> </span>
-													<span><i class="far fa-folder"></i> 
-														<a href="#">DevOps</a>, 
-														<a href="#">Dynamics</a>, 
-														<a href="#">Power Platform</a>, 
-														<a href="#">Smart Factory</a> 
-													</span>
-
-													<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="../blog/blogPowerPlatformAlmUsingGithubActions.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
-												</div>
-		
-											</div>
-										</article>
-									</div>
-
-									<!-- Blog post article overview -->
-									<div class="col-sm-6">
-										<article class="post post-medium  border-0 pb-0 mb-5">
-											<div class="post-image">
-												<a href="../blog/blogVisitorManagement.html">
-													<img src="img/digital/VisitorManagement/SwissSmartFactoryVisitorManagementApps.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
-												</a>
-											</div>
-											<p></p>
-											<div class="post-date">
-												<span class="day">21</span>
-												<span class="month">Sep</span>
-											</div>
-		
-											<div class="post-content">
-		
-												<h2 class="font-weight-semibold text-6 line-height-3 mb-3"><a href="../blog/blogVisitorManagement.html">Hackathon - Visitor Management app</a></h2>
-												<p>The Visitor Management is a collection of four Power Apps to manage smart factory visitors. 
-
-													<li>Visitor Welcome Desk app located at the entry point of the factory floor</li>
-													<li>Visitor Self Registration app on a tablet device</li>
-													<li>Visitor Management app to manage visits</li>
-													<li>Visitor Mixed Reality app to confirm mixed reality competency</li>
-													We build this apps during a <strong>three day Hackathon</strong> with the Swiss Smart Factory team.
-													
-													
-													 [...]</p>
-		
-												<div class="post-meta">
-													<span><i class="far fa-user"></i> By <a href="aboutme.html">Urs Rüegg</a> </span>
-													<span><i class="far fa-folder"></i> 
-														<a href="#">AI</a>, 
-														<a href="#">Power Platform</a>, 
-														<a href="#">Smart Factory</a> 
-													</span>
-
-													<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="../blog/blogVisitorManagement.html" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
-												</div>
-		
-											</div>
-										</article>
-									</div>
+									</div> -->
 
 								</div>
-
-								<!-- Page navigation -->
-<!-- 								<div class="row">
-									<div class="col">
-										<ul class="pagination float-end">
-											<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
-											<li class="page-item active"><a class="page-link" href="#">1</a></li>
-											<li class="page-item"><a class="page-link" href="#">2</a></li>
-											<li class="page-item"><a class="page-link" href="#">3</a></li>
-											<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
-										</ul>
-									</div>
-								</div> -->
-
 							</div>
 						</div>
-					</div>
 
-				</div>
+					</div>
+				</section>
 
 			</div>
 
@@ -385,8 +399,9 @@
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
-								<li class="social-icons-twitter"><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i class="fab fa-twitter text-2"></i></a></li>
-								<li class="social-icons-linkedin"><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in text-2"></i></a></li>
+								<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in text-2"></i></a></li>
+                                <li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i class="fab fa-github text-2"></i></a></li>
+								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i class="fab fa-twitter text-2"></i></a></li>
 							</ul>
 							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
 						</div>
@@ -418,78 +433,6 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
-
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-		<script>
-
-			/*
-			Map Settings
-
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-			function initializeGoogleMaps() {
-				// Map Markers
-				var mapMarkers = [{
-					address: "Zumikon Ankenbüel 7, CH 8126",
-					html: "<div class='map-info-box'><strong>Address:</strong><br>Porto Gym 123<br>Porto Blvd, Suite 100<br>New York, NY<br><strong>Phone: </strong><a href='tel:+1234567890'>123-456-7890</a><div class='map-info-box-image' style='background: url(img/demos/gym/map/map-location-image.jpg); background-size: cover;'></div></div>",
-					icon: {
-						image: "img/demos/gym/map/pin.png",
-						iconsize: [57, 66],
-						iconanchor: [57, 66]
-					},
-					popup: true
-				}];
-
-				// Map Initial Location
-				var initLatitude = 40.75198;
-				var initLongitude = -73.96978;
-
-				// Map Extended Settings
-				var mapSettings = {
-					controls: {
-						draggable: (($.browser.mobile) ? false : true),
-						panControl: true,
-						zoomControl: true,
-						mapTypeControl: true,
-						scaleControl: true,
-						streetViewControl: true,
-						overviewMapControl: true
-					},
-					scrollwheel: false,
-					markers: mapMarkers,
-					latitude: initLatitude,
-					longitude: initLongitude,
-					zoom: 14
-				};
-
-				var map = $('#googlemaps').gMap(mapSettings),
-					mapRef = $('#googlemaps').data('gMap.reference');
-
-				// Styles from https://snazzymaps.com/
-				var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
-
-				var styledMap = new google.maps.StyledMapType(styles, {
-					name: 'Styled Map'
-				});
-
-				mapRef.mapTypes.set('map_style', styledMap);
-				mapRef.setMapTypeId('map_style');
-			}
-
-			// Initialize Google Maps when element enter on browser view
-			theme.fn.intObs( '.google-map', 'initializeGoogleMaps()', {} );
-
-			// Map text-center At
-			var mapCenterAt = function(options, e) {
-				e.preventDefault();
-				$('#googlemaps').gMap("centerAt", options);
-			}
-
-		</script>
 
 	</body>
 </html>
