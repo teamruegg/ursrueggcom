@@ -295,17 +295,21 @@
 													<div class="row">
 														<div class="col-auto pe-0">
 															<div class="date">
-																<span class="day font-weight-extra-bold">15</span>
-																<span class="month text-1">JAN</span>
+																<span class="day font-weight-extra-bold">20</span>
+																<span class="month text-1">Dec</span>
 															</div>
 														</div>
 														<div class="col ps-1">
 															<h4 class="text-primary text-4"><a class="d-block"
-																	href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a>
+																	href="blog/blogPowerPlatformAlmUsingGithubActions.html">Power Platform ALM using GitHub Actions</a>
 															</h4>
-															<p class="pe-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing
-																elit.</p>
-															<a href="/"
+															<p class="pe-4 mb-0">For Power Platform ALM we used Power Platform Build Tools for Azure DevOps to
+																establish continuous
+																integration and continuous deployment pipeline. Azure DevOps has his
+																strengths working with internal teams
+																but gets challenging if you want to build app with different externals or a
+																community.</p>
+															<a href="blog/blogPowerPlatformAlmUsingGithubActions.html"
 																class="read-more text-color-dark font-weight-semibold text-2">read more
 																<i class="fas fa-angle-right position-relative top-1 ms-1"></i></a>
 														</div>
@@ -474,76 +478,6 @@
 		<!-- Theme Initialization Files -->
 		<script src="js/theme.init.js"></script>
 
-		<script>
 
-			/*
-			Map Settings
-
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-			function initializeGoogleMaps() {
-				// Map Markers
-				var mapMarkers = [{
-					address: "Zumikon Ankenbüel 7, CH 8126",
-					html: "<div class='map-info-box'><strong>Address:</strong><br>Porto Gym 123<br>Porto Blvd, Suite 100<br>New York, NY<br><strong>Phone: </strong><a href='tel:+1234567890'>123-456-7890</a><div class='map-info-box-image' style='background: url(img/demos/gym/map/map-location-image.jpg); background-size: cover;'></div></div>",
-					icon: {
-						image: "img/demos/gym/map/pin.png",
-						iconsize: [57, 66],
-						iconanchor: [57, 66]
-					},
-					popup: true
-				}];
-
-				// Map Initial Location
-				var initLatitude = 40.75198;
-				var initLongitude = -73.96978;
-
-				// Map Extended Settings
-				var mapSettings = {
-					controls: {
-						draggable: (($.browser.mobile) ? false : true),
-						panControl: true,
-						zoomControl: true,
-						mapTypeControl: true,
-						scaleControl: true,
-						streetViewControl: true,
-						overviewMapControl: true
-					},
-					scrollwheel: false,
-					markers: mapMarkers,
-					latitude: initLatitude,
-					longitude: initLongitude,
-					zoom: 14
-				};
-
-				var map = $('#googlemaps').gMap(mapSettings),
-					mapRef = $('#googlemaps').data('gMap.reference');
-
-				// Styles from https://snazzymaps.com/
-				var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
-
-				var styledMap = new google.maps.StyledMapType(styles, {
-					name: 'Styled Map'
-				});
-
-				mapRef.mapTypes.set('map_style', styledMap);
-				mapRef.setMapTypeId('map_style');
-			}
-
-			// Initialize Google Maps when element enter on browser view
-			theme.fn.intObs( '.google-map', 'initializeGoogleMaps()', {} );
-
-			// Map text-center At
-			var mapCenterAt = function(options, e) {
-				e.preventDefault();
-				$('#googlemaps').gMap("centerAt", options);
-			}
-
-		</script>
- -->
 	</body>
 </html>
