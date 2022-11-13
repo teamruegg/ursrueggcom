@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>Setup Raspberry PI with Microsoft Windows 10 IoT Core</title>	
+
+		<meta name="keywords" content="Urs Rüegg | Setup Raspberry PI with Microsoft Windows 10 IoT Core" />
+		<meta name="description" content="For our Connected Field Service Experience Demo, we want to connect a Raspberry PI with Azure IoT Central. The Raspberry PI monitors temperature, humidity and vibration of our Experience Motor device using GoovePi and attached Groove Sensors. For this we need to set up a Raspberry PI with the Microsoft Windows 10 IoT core. Let’s just start then.">
+		<meta name="copyright" content="© Copyright 2022 by Urs Rüegg. All Rights Reserved." />
+		<meta name="author" content="Urs Rüegg">
+		<meta name="contact" content="urs.ruegg@microsoft.com">
+		<meta name="thumbnail" content="https://www.ursruegg.com/img/home/team_intro7_bw.jpg" />
+		<meta name="og:title" property="og:title" content="For our Connected Field Service Experience Demo, we want to connect a Raspberry PI with Azure IoT Central. The Raspberry PI monitors temperature, humidity and vibration of our Experience Motor device using GoovePi and attached Groove Sensors. For this we need to set up a Raspberry PI with the Microsoft Windows 10 IoT core. Let’s just start then.">
+		<meta name="twitter:card" content="For our Connected Field Service Experience Demo, we want to connect a Raspberry PI with Azure IoT Central. The Raspberry PI monitors temperature, humidity and vibration of our Experience Motor device using GoovePi and attached Groove Sensors. For this we need to set up a Raspberry PI with the Microsoft Windows 10 IoT core. Let’s just start then.">
+		<meta name="robots" content="index, follow">
+		<link rel="canonical" href="https://www.ursruegg.com/">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
+		<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="stylesheet" href="../css/theme-elements.css">
+		<link rel="stylesheet" href="../css/theme-blog.css">
+		<link rel="stylesheet" href="../css/theme-shop.css">
+
+		<!-- Revolution Slider CSS -->
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="../css/ursruegg.css">
+
+		<!-- Skin CSS -->
+		<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="../vendor/modernizr/modernizr.min.js"></script>
+	</head>
+	<body data-plugin-page-transition>
+
+		<div class="body">
+			<!-- Header -->
+			<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
+				data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+				<div class="header-body bg-color-dark box-shadow-none">
+					<div class="header-container header-container-height-sm container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="../index.html">
+											<img alt="ursruegg | Website" width="40" height="40"
+												src="../img/logos/ursruegg_icon_180x180.png">
+										</a>
+									</div>
+								</div>
+							</div>
+							<!-- Navigation -->
+							<div class="header-column justify-content-end me-lg-4">
+								<div class="header-row">
+									<div
+										class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
+										<div
+											class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li>
+														<a class="nav-link" href="../index.html">
+															Home
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="../blog.html">
+															Blog
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="../search.html">
+															Search
+														</a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+										<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
+											href="../aboutme.html">About Me</a>
+										<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+											data-bs-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		
+			<!-- Main -->
+			<div role="main" class="main">
+		
+				<!-- Container 1 - Intro -->
+				<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
+					<div class="container">
+						<div class="col-md-12 align-self-center order-1">
+							<ul class="breadcrumb d-block text-center">
+								<li><a href="../index.html">Home</a></li>
+								<li><a href="../blog.html">Blog</a></li>
+								<li class="active">Setup Raspberry PI with Microsoft Windows 10 IoT Core</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+		
+				<!-- Container 2 - Section -->
+				<section class="section section-light section-no-border m-0">
+					<div class="container py-4">
+		
+						<div class="row">
+							<div class="col">
+								<div class="blog-posts single-post">
+		
+									<!-- Container - Article  header-->
+									<article class="post post-large blog-single-post border-0 m-0 p-0">
+										<div class="post-image">
+											<img src="../img/digital/SetupPIWithWindowsIoTCore/raspberrypi3_07_deviceinfo.jpg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
+										</div>
+										<p></p>
+		
+										<div class="post-date ms-0">
+											<span class="day">20</span>
+											<span class="month">Jun</span>
+										</div>
+		
+										<div class="post-content ms-0">
+		
+											<h2 class="font-weight-semi-bold"><a href="../blog/blogSetupRaspberryPIWithWindows10IoTCore.html">Setup Raspberry PI with Microsoft Windows 10 IoT Core</a></h2>
+		
+											<div class="post-meta">
+												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+												<span><i class="far fa-folder"></i>
+													<a href="#">Azure</a>,
+													<a href="#">Digital</a>,
+													<a href="#">Development</a>,
+													<a href="#">IoT</a>,
+													<a href="#">Smart Factory</a>
+												</span>
+											</div>
+		
+											<!-- Container - Article content -->
+		
+											<h4>Quick guide with key steps</h4>
+		
+											<p>For our Connected Field Service Experience Demo, we want to connect a Raspberry PI with Azure IoT Central. The Raspberry PI monitors temperature, humidity and vibration of our Experience Motor device using GoovePi and attached Groove Sensors. For this we need to set up a Raspberry PI with the Microsoft Windows 10 IoT core. Let’s just start then.</p>
+		
+											<h4>Prerequisites</h4>
+
+											<ul>
+												<li>Raspberry PI</li>
+												<li>SD card</li>
+												<li>Internet connection</li>
+												<li>Ethernet, if your Raspberry PI supports wifi, you can skip this.</li>
+												<li>Monitor and HDMI cable</li>
+												<li>Keyboard</li>
+												<li>Mouse</li>
+											</ul>
+
+											<h4>Setting up the Raspberry PI</h4>
+
+											<p>Before you continue this step, please make sure that you have all the mentioned prerequisites.</p>
+
+											<h4>Formatting an SD card</h4>
+
+											<p>I am a person who likes to start everything from scratch, so as a first step, we are going to format our SD card. You can either use the normal Format option your Operating System offers. I always use the tool called “SD Card Formatter”. You can easily download the tool from the Internet. Once you have it installed, open the tool, and select the SD card to be formatted and then click on Format.</p>
+
+											<h4>Installing Windows 10 IoT Core Operating System</h4>
+
+											<p>According to Microsoft, Windows 10 IoT is a member of the Windows 10 family that brings enterprise-class power, security, and manageability to the Internet of Things. It leverages Windows’ embedded experience, ecosystem, and cloud connectivity, allowing organizations to create their Internet of Things with secure devices that can be quickly provisioned, easily managed, and seamlessly connected to an overall cloud strategy.</p>
+											<p>As a first step, we will be downloading a tool called Windows 10 IoT core dashboard, which will help us to format, write the IoT core OS to our SD card, connect to our Raspberry PI. Once you have downloaded the dashboard, open the tool and select the image you want to flash as preceding.</p>
+
+
+											<h4>Setup a new device</h4>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/iotdashboard_01_setupnewdevice.png" class="img-fluid"
+														alt="Setup a new device">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Setup a new device</span>
+														<span class="thumb-info-type opacity-6">Once the flashing is done, it will start deploying your image.
+															Please make a note of the password you had given as it is needed in future to log in to the device
+															portal. You can also change the device name as you wish. </span>
+													</span>
+												</span>
+											</span>
+											
+											<p>Once the flashing is done, it will start deploying your image. Please make a note of the password you had given as it is needed in future to log in to the device portal. You can also change the device name as you wish.</p>
+		
+											<h4>Deploy image</h4>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/iotdashboard_02_setupnewdevice-_flashimage.png" class="img-fluid"
+														alt="Deploy image">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Deploy image</span>
+														<span class="thumb-info-type opacity-6">It may take a few minutes to complete the entire process, but it really worth waiting. Once the image flashing is done, you will get a screen as preceding.</span>
+													</span>
+												</span>
+											</span>
+
+											<p> </p>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/iotdashboard_03_setupnewdevice-_flashimageprogress.png" class="img-fluid"
+														alt="Deploy image">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Deploy image</span>
+														<span class="thumb-info-type opacity-6">It may take a few minutes to complete the entire process, but it really worth waiting. Once the image flashing is done, you will get a screen as preceding.</span>
+													</span>
+												</span>
+											</span>
+
+											<p> </p>
+
+											<h4>SD Card is Ready</h4>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/iotdashboard_04_setupnewdevicefinished.png" class="img-fluid"
+														alt="SD Card is Ready">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">SD Card is Ready</span>
+														<span class="thumb-info-type opacity-6">SD Card is Ready.</span>
+													</span>
+												</span>
+											</span>
+											
+											<p> </p>
+
+											<h4>Set up the device with Monitor, mouse, and keyboard</h4>
+
+											<p>Now let us just insert the SD card in the Raspberry PI and connect the monitor, keyboard, mouse, and ethernet. Once you have done this, your Raspberry PI may look like below.</p>
+
+											<h4>Raspberry Configuration</h4>
+
+											<p>Once you are connected to the monitor, you can see that the OS is getting ready for doing amazing things. This may take a few minutes, and you should select your preferred language in the process. Once everything is done you should be able to see the device information on the screen as preceding.</p>
+
+											<h4>Raspberry PI Information</h4>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/raspberrypi3_07_deviceinfo.jpg" class="img-fluid"
+														alt="Raspberry PI Information">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Raspberry PI Information</span>
+														<span class="thumb-info-type opacity-6">Please be noted that you can even update your OS if you wish by navigating to the App settings -> App updates.</span>
+													</span>
+												</span>
+											</span>											
+
+											<p>Please be noted that you can even update your OS if you wish by navigating to the App settings -> App updates.</p>
+
+											<h4>Update Windows 10 IoT Core</h4>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/raspberrypi3_08_appupdates.jpg" class="img-fluid"
+														alt="Raspberry PI Information">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Raspberry PI Information</span>
+														<span class="thumb-info-type opacity-6">Please be noted that you can even update your OS if you wish by
+															navigating to the App settings -> App updates.</span>
+													</span>
+												</span>
+											</span>
+
+											<p></p>
+
+											<h4>Login to Device portal</h4>
+
+											<p>As we have connected and configured our Windows IoT Core Operating System on our Raspberry PI, we can connect to the device portal now. Please open the IoT Core Dashboard application again and click on my devices and then right click on your device. You should see an option as ” Open in device portal”.</p>
+
+											<h4>Connecting to the Raspberry Device</h4>
+
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/SetupPIWithWindowsIoTCore/iotdashboard_05_mydevices.png" class="img-fluid"
+														alt="Connecting to the Raspberry Device">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Connecting to the Raspberry Device</span>
+														<span class="thumb-info-type opacity-6">The device will open in the browser, you would have to enter the username as “administrator” and the password you had given while configuring the device.</span>
+													</span>
+												</span>
+											</span>
+
+											<p>The device will open in the browser, you would have to enter the username as “administrator” and the password you had given while configuring the device. I used the password as “raspberry”. Once you are logged in you can see the App manager where you have the provision to set your start app applications and many more settings.</p>
+
+											<h4>IoT Core Device Portal</h4>
+
+											<span
+											class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+											<span class="thumb-info-wrapper">
+												<img src="../img/digital/SetupPIWithWindowsIoTCore/iotdashboard_06_windowsdeviceportal.png" class="img-fluid"
+													alt="IoT Core Device Portal">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner line-height-1">IoT Core Device Portal</span>
+													<span class="thumb-info-type opacity-6">The device will open in the browser, you would have to enter the username as “administrator” and the password you had given while configuring the device.</span>
+												</span>
+											</span>
+										</span>
+
+											<p></p>
+
+											<h4>Conclusion</h4>
+
+											<p>Congratulations. Now we have a small, lightweight, functioning Windows 10 IoT core Raspberry PI in our hand and just go ahead and start playing with the same.</p>
+
+											<!-- Container - Article footer -->
+											<hr class="solid my-5">
+											<p>20. Jun 2020</p>
+		
+											<h4 class="mb-3">References</h4>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+													href="https://learn.microsoft.com/en-us/windows/iot-core/windows-iot-core"
+													target="_blank">
+													An overview of Windows 10 IoT Core</a></li>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+													href="https://learn.microsoft.com/en-us/windows/iot-core/learn-about-hardware/hardwarecompatlist"
+													target="_blank"> Windows 10 IoT Core Hardware compatibility list</a></li>
+													<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+														href="https://learn.microsoft.com/en-us/windows/iot-core/tutorials/quickstarter/prototypeboards"
+														target="_blank"> Windows 10 IoT Core Development Devices</a></li>		
+		
+											<!-- Container - Article author -->
+											<div class="post-block mt-4 pt-2 post-author">
+												<h4 class="mb-3">Author</h4>
+												<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+													<a href="../aboutme.html">
+														<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+													</a>
+												</div>
+												<p><strong class="name"><a href="../aboutme.html"
+															class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
+												</p>
+												<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+											</div>
+		
+		
+										</div>
+									</article>
+		
+								</div>
+							</div>
+						</div>
+		
+					</div>
+				</section>
+		
+			</div>
+		
+			<!-- Footer -->
+			<footer id="footer" class="bg-color-quaternary">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
+								<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
+											class="fab fa-linkedin-in text-2"></i></a></li>
+								<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
+											class="fab fa-github text-2"></i></a></li>
+								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
+											class="fab fa-twitter text-2"></i></a></li>
+							</ul>
+							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		
+		</div>
+
+		<!-- Vendor -->
+		<script src="../vendor/plugins/js/plugins.min.js"></script>
+		<script src="../vendor/instafeed/instafeed.min.js"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="../js/theme.js"></script>
+
+		<!-- Revolution Slider Scripts -->
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Current Page Vendor and Views -->
+		<script src="../js/views/view.contact.js"></script>
+
+		<!-- Demo -->
+		<script src="../js/demos/demo-gym.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="../js/custom.js"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="../js/theme.init.js"></script>
+
+	</body>
+</html>
