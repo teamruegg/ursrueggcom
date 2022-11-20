@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- Basic -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>5S Assessment app Hackathon</title>
+
+	<meta name="keywords" content="Urs Rüegg | Hackathon - 5S Assessment app" />
+	<meta name="description"
+		content="The 5S Assessment solution is a collection of three Power Apps to manage 5S methodology - Kaizen and Lean Management within an organization. We build this apps during a thee day Hackathon with the customer team.">
+	<meta name="copyright" content="© Copyright 2022 by Urs Rüegg. All Rights Reserved." />
+	<meta name="author" content="Urs Rüegg">
+	<meta name="contact" content="urs.ruegg@microsoft.com">
+	<meta name="thumbnail" content="https://www.ursruegg.com/img/digital/5SAssessment/5SWeeklyAssessmentApp.png" />
+	<meta name="og:title" property="og:title"
+		content="The 5S Assessment solution is a collection of three Power Apps to manage 5S methodology - Kaizen and Lean Management within an organization. We build this apps during a thee day Hackathon with the customer team.">
+	<meta name="twitter:card"
+		content="The 5S Assessment solution is a collection of three Power Apps to manage 5S methodology - Kaizen and Lean Management within an organization. We build this apps during a thee day Hackathon with the customer team.">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://www.ursruegg.com/">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+	<!-- Web Fonts  -->
+	<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+		rel="stylesheet" type="text/css">
+
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
+	<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="../css/theme.css">
+	<link rel="stylesheet" href="../css/theme-elements.css">
+	<link rel="stylesheet" href="../css/theme-blog.css">
+	<link rel="stylesheet" href="../css/theme-shop.css">
+
+	<!-- Revolution Slider CSS -->
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../css/ursruegg.css">
+
+	<!-- Skin CSS -->
+	<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="../css/custom.css">
+
+	<!-- Head Libs -->
+	<script src="../vendor/modernizr/modernizr.min.js"></script>
+</head>
+
+<body data-plugin-page-transition>
+
+	<div class="body">
+		<!-- Header -->
+		<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
+			data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+			<div class="header-body bg-color-dark box-shadow-none">
+				<div class="header-container header-container-height-sm container">
+					<div class="header-row">
+						<div class="header-column">
+							<div class="header-row">
+								<div class="header-logo">
+									<a href="../index.html">
+										<img alt="ursruegg | Website" width="40" height="40"
+											src="../img/logos/ursruegg_icon_180x180.png">
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- Navigation -->
+						<div class="header-column justify-content-end me-lg-4">
+							<div class="header-row">
+								<div
+									class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
+									<div
+										class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+										<nav class="collapse">
+											<ul class="nav nav-pills" id="mainNav">
+												<li>
+													<a class="nav-link" href="../index.html">
+														Home
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="../blog.html">
+														Blog
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="../search.html">
+														Search
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+									<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
+										href="../aboutme.html">About Me</a>
+									<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+										data-bs-target=".header-nav-main nav">
+										<i class="fas fa-bars"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div role="main" class="main">
+
+			<!-- Container 1 - Intro -->
+			<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
+				<div class="container">
+					<div class="col-md-12 align-self-center order-1">
+						<ul class="breadcrumb d-block text-center">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li class="active">Hackathon - 5S Assessment app</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Container 2 - Section -->
+			<section class="section section-light section-no-border m-0">
+				<div class="container py-4">
+
+					<div class="row">
+						<div class="col">
+							<div class="blog-posts single-post">
+
+								<!-- Container - Article  header-->
+								<article class="post post-large blog-single-post border-0 m-0 p-0">
+									<div class="post-image">
+										<img src="../img/digital/5SAssessment/5SWeeklyAssessmentApp.png"
+											class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+									</div>
+									<p></p>
+
+									<div class="post-date ms-0">
+										<span class="day">20</span>
+										<span class="month">Nov</span>
+									</div>
+
+									<div class="post-content ms-0">
+
+										<h2 class="font-weight-semi-bold"><a
+												href="../blog/blogHackathon5SAssessmentApp.html">Hackathon - 5S
+												Assessment app</a>
+										</h2>
+
+										<div class="post-meta">
+											<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+											<span><i class="far fa-folder"></i>
+												<a href="#">Digital</a>,
+												<a href="#">Power Platform</a>,
+												<a href="#">Smart Factory</a>
+											</span>
+										</div>
+
+										<!-- Container - Article content -->
+
+										<h4>5S methodology - Kaizen and Lean Management</h4>
+
+										<p>The 5S Assessment solution is a collection of three Power Apps to manage 5S
+											methodology -
+											Kaizen and Lean Management within an organization. We build this apps during
+											a thee day
+											Hackathon with the customer team.</p>
+
+										<span
+											class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+											<span class="thumb-info-wrapper">
+												<img src="../img/digital/5SAssessment/5SAssessmentApps.png"
+													class="img-fluid" alt="Welcome Desk and Visitor Management apps">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner line-height-1">5S Assessment
+														apps</span>
+													<span class="thumb-info-type opacity-6">The 5S Assessment solution
+														is a
+														collection of three Power Apps to manage 5S methodology - Kaizen
+														and Lean
+														Management within an organization.</span>
+												</span>
+											</span>
+										</span>
+
+										<p>Recently we have had manufacturing customer engaged in a Hackathon with us to
+											implement
+											the 5S Assessment for support lean management objectives. They used Excel
+											based
+											assessment sheets to perform the assessment for each area like factory
+											floor,
+											engineering workspace or warehouse. You can imaging it get quite complex to
+											manage 100+
+											assessments and improvement activities via excel shared sheets with all key
+											stakeholder
+											owing the assessment for each location and delegating the improvement
+											activities to the
+											area owners. Beside this a key challenges was to own and maintain the 5S
+											assessment
+											toolset by the business owner responsible for the lean management.</p>
+										<p>During an envisioning and architecture design session we crafted a target
+											solution based
+											on low-code, the use cases and target architecture design to be deployed on
+											Power
+											Platform. Maintained and enhanced by the business owners.</p>
+										<p>We build this apps during a four day Hackathon with the customer and deployed
+											the MVP to
+											production.
+										</p>
+
+
+										<h4>5S methodology - Kaizen and Lean Management</h4>
+
+										<h5>Introduction</h5>
+										<p>5S is a workplace organization method that uses a list of five Japanese words
+											Seiri,
+											Seiton, Seiso, Seiketsu and Shitsuke.</p>
+
+										<p>The list describes how to organize a workspace for efficiency and
+											effectiveness by
+											identifying and storing the items used, maintaining the area and items, and
+											sustaining
+											the new order. The decision-making process usually comes from a dialogue
+											about
+											standardization, which builds understanding among employees of how they
+											should do the
+											work.</p>
+
+										<p>Other than a specific stand-alone methodology, 5S is frequently viewed as an
+											element of a
+											broader construct known as visual control, visual workplace, or visual
+											factory.</p>
+
+										<h4>5S Assessment epic and use case overview</h4>
+
+										<h5>Actors</h5>
+
+										<ul>
+											<li>5S Assessment methodology <strong>global owner</strong></li>
+											<li>5S <strong>Area leader</strong> who is responsible for a location or
+												area to ensure
+												5S progress</li>
+											<li>5S <strong>Coach</strong> who supports area leaders to align 5S
+												principles</li>
+											<li>5S <strong>Improvment owner</strong> who is assigned to tasks to ensure
+												improvments
+											</li>
+										</ul>
+
+										<h5>Use case scenarios overview</h5>
+
+										<ul>
+											<li>When an assessment is created for a location, the whole matrix is
+												prepopulated
+												upfront including all levels, categories like the shown in the matrix.
+											</li>
+											<li>The assessment owner checks each checklist item, for example Sort – A -
+												Employee
+												belongings and tracks the level of confirmations.</li>
+											<li>If he identify within a level a non-confirmation, he creates one or more
+												improvement
+												tasks for the level and assign it to improvement owner.</li>
+											<li>Improvement owners implement the improvement and confirm it by capturing
+												a photo of
+												the applied changes and mark the tasks as completed.</li>
+										</ul>
+
+										<h5>5S Example assessment</h5>
+
+										<p>Let’s review an example assessment for a specific area targeting computer and
+											systems.
+										</p>
+
+										<span
+											class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+											<span class="thumb-info-wrapper">
+												<img src="../img/digital/5SAssessment/5SAssessmentExample.png"
+													class="img-fluid" alt="Welcome Desk and Visitor Management apps">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner line-height-1">5S Example
+														assessment</span>
+													<span class="thumb-info-type opacity-6">An assessment is for a
+														specific location
+														or area and shows the prgress for each 5S principle in a radar
+														chart.
+														Including how it was before and after improvments.</span>
+												</span>
+											</span>
+										</span>
+
+										<p>An assessment is for a specific location or area and shows the prgress for
+											each 5S
+											principle in a radar chart. Including how it was before and after
+											improvments.</p>
+
+
+
+
+										<span
+											class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+											<span class="thumb-info-wrapper">
+												<img src="../img/digital/5SAssessment/5SAssessmentBusinessProcess.png"
+													class="img-fluid" alt="5S Example assessment">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner line-height-1">5S Example
+														assessment</span>
+													<span class="thumb-info-type opacity-6">An assessment is for a
+														specific location
+														or area and shows the prgress for each 5S principle in a radar
+														chart.
+														Including how it was before and after improvments.</span>
+												</span>
+											</span>
+										</span>
+
+										<p>The assessment matrix is based on focused categories and achievement levels:
+										</p>
+										<ul>
+											<li><strong>Categories:</strong> Employee belongings, Work surface, Storage
+												areas,
+												Production materials, Visual Standards</li>
+											<li><strong>Levels 1- 5:</strong> with clear objectives how to measure the
+												level
+												achievements within the category</li>
+										</ul>
+
+										<h4>Architecure and solution design</h4>
+
+										<p>As our starting point is the assessment excel and we’ve to migrate the
+											existing assessments, we start first iteration with the data model to
+											establish:</p>
+										<ul>
+											<li>Assessment matrix template with categories and levels axes</li>
+											<li>Assessment matrix instance used for each assessment location/area based
+												on the matrix template</li>
+										</ul>
+
+										<div class="owl-carousel owl-theme dots-modern"
+											data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 3}, '1199': {'items': 3}}, 'loop': false, 'autoHeight': true, 'margin': 10}">
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SAssessmentBusinessProcess.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SAdminAppCatergory.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SAdminAppCatergoryLevels.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SAdminAppChecklist.png">
+											</div>
+										</div>
+
+										<h4>5S Assessment data model</h4>
+
+										<p>The data model consists of</p>
+										<ul>
+											<li><strong>Master data:</strong> Site (Location), Area, Assessment Type,
+												Category and Level</li>
+											<li><strong>Instance data:</strong> Assessment and related Checklist</li>
+											<li><strong>Activity data:</strong> Related activity types like notes,
+												tasks, attachments and improvements tasks</li>
+											<li><strong>Organization data:</strong> Organization, Business Unit, User
+												and Security Roles</li>
+										</ul>
+
+										<span
+											class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+											<span class="thumb-info-wrapper">
+												<img src="../img/digital/5SAssessment/5SAssessmentDataModel.png"
+													class="img-fluid" alt="5S Assessment data model">
+												<span class="thumb-info-title">
+													<span class="thumb-info-inner line-height-1">5S Assessment data
+														model</span>
+													<span class="thumb-info-type opacity-6">5S Assessment master,
+														instance, activities and organization entities</span>
+												</span>
+											</span>
+										</span>
+
+										<p>Check below references regarding Dataverse types of tables.</p>
+
+
+										<h5>5S Assessment business process</h5>
+
+										<p>In the second iteration we establishing the assessment business process and
+											the improvement task assignment.</p>
+
+										<p>Assessment checklist</p>
+
+										<div class="owl-carousel owl-theme dots-modern"
+											data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 3}, '1199': {'items': 3}}, 'loop': false, 'autoHeight': true, 'margin': 10}">
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SAdminAppChecklistGeneral.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SWeeklyAssessmentAppAssessmentReview.png">
+											</div>
+										</div>
+
+										<p>Assessment improvment tasks</p>
+
+										<div class="owl-carousel owl-theme dots-modern"
+											data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 3}, '1199': {'items': 3}}, 'loop': false, 'autoHeight': true, 'margin': 10}">
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/5SAdminAppImprovementTasksGeneral.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/S5CheckImprovementApp.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/S5CheckImprovementAppDetail.png">
+											</div>
+											<div>
+												<img alt="" class="img-fluid rounded"
+													src="../img/digital/5SAssessment/S5CheckImprovementAppMap.png">
+											</div>
+										</div>
+
+
+										<h5>5S Assessment use experience apps</h5>
+
+										<ul>
+											<li><strong>5S Assessment Admin app</strong> – Main app for the owner to
+												manage S5 assessment globally</li>
+											<div class="owl-carousel owl-theme dots-modern"
+												data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 3}, '1199': {'items': 3}}, 'loop': false, 'autoHeight': true, 'margin': 10}">
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppArea.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppAreaGeneral.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppCatergory.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppCatergoryGeneral.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppCatergoryLevels.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppChecklist.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppChecklistGeneral.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppImprovementTasks.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SAdminAppImprovementTasksGeneral.png">
+												</div>
+											</div>
+											<li><strong>5S Assessment app</strong> – Main app for the area leader to
+												perform regular assessment and capture and assign improvements task.
+											</li>
+											<div class="owl-carousel owl-theme dots-modern"
+												data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 3}, '1199': {'items': 3}}, 'loop': false, 'autoHeight': true, 'margin': 10}">
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SWeeklyAssessmentApp.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SWeeklyAssessmentAppAssessmentOverview.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/5SWeeklyAssessmentAppAssessmentReview.png">
+												</div>
+											</div>
+											<li><strong>5S Check Improvements app</strong> – Main app for improvement
+												owners to track assigned improvements and their progress.</li>
+											<div class="owl-carousel owl-theme dots-modern"
+												data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '979': {'items': 3}, '1199': {'items': 3}}, 'loop': false, 'autoHeight': true, 'margin': 10}">
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/S5CheckImprovementApp.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/S5CheckImprovementAppDetail.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/S5CheckImprovementAppEdit.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/S5CheckImprovementAppMap.png">
+												</div>
+												<div>
+													<img alt="" class="img-fluid rounded"
+														src="../img/digital/5SAssessment/S5CheckImprovementAppView.png">
+												</div>
+											</div>
+										</ul>
+
+										<h4>Conclusion</h4>
+										<p>With a mixed team including business topic owner, business analyst and a
+											developer you can achieve above 5S assessment solution within three daily
+											sprints. Leave the last sprint to review and test the use cases. Collect
+											everything into one solution packaged and setup Git Hub repository and
+											actions. Check below reference to the Git Hub repro containing the whole
+											solution. In congest of time, we’ve had to scoped out the Power BI Dashboard
+											for the MVP.</p>
+
+										<h4>Prerequisites</h4>
+										<p>The 5S Assessment app is built on Power Platform. And there for the following
+											apps needs to be installed and configured before deploying the app:</p>
+										<ul>
+											<li>Microsoft Dataverse environments (for development, test and productions)
+											</li>
+											<li>Power BI workspace</li>
+										</ul>
+
+
+
+
+										<!-- Container - Article footer -->
+										<hr class="solid my-5">
+										<p>20. Nov 2022</p>
+
+										<h4 class="mb-3">References</h4>
+										<li><i class="fab fa-github text-2"></i> <a
+												href="https://github.com/teamruegg/5SAssessment" target="_blank">GitHub
+												Repository
+												https://github.com/teamruegg/5SAssessments</a></li>
+										<li><i class="fab fa-brands fa-microsoft text-2"></i> <a
+												href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/types-of-entities"
+												target="_blank">Dataverse types of tables (Docs)</a>
+										</li>
+										<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://en.wikipedia.org/wiki/5S_(methodology)" target="_blank">
+												Wikipedia 5S (methodology)</a></li>
+
+										<!-- Container - Article author -->
+										<div class="post-block mt-4 pt-2 post-author">
+											<h4 class="mb-3">Author</h4>
+											<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+												<a href="../aboutme.html">
+													<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+												</a>
+											</div>
+											<p><strong class="name"><a href="../aboutme.html"
+														class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
+											</p>
+											<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+										</div>
+
+
+									</div>
+								</article>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="bg-color-quaternary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
+							<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
+										class="fab fa-linkedin-in text-2"></i></a></li>
+							<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
+										class="fab fa-github text-2"></i></a></li>
+							<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
+										class="fab fa-twitter text-2"></i></a></li>
+						</ul>
+						<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Vendor -->
+	<script src="../vendor/plugins/js/plugins.min.js"></script>
+	<script src="../vendor/instafeed/instafeed.min.js"></script>
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="../js/theme.js"></script>
+
+	<!-- Revolution Slider Scripts -->
+	<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- Current Page Vendor and Views -->
+	<script src="../js/views/view.contact.js"></script>
+
+	<!-- Demo -->
+	<script src="../js/demos/demo-gym.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="../js/custom.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="../js/theme.init.js"></script>
+
+</body>
+
+</html>
