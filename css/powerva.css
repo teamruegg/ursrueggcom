@@ -1,0 +1,39 @@
+/* Power Virtual Agent stylesheet */
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 16px;
+    font-family: Segoe UI;
+    line-height: 20px;
+    color: whitesmoke;
+    display: table-cell;
+    padding: 13px 0px 0px 20px;
+}
+
+#heading {
+    background-color: #E36159;
+    height: 50px;
+}
+
+.main {
+    margin: 18px;
+    border-radius: 4px;
+}
+
+div[role="form"]{
+    background-color: black;
+}
+
+#webchat {
+    position: fixed;
+    height: calc(100% - 0px);
+    width: 200%;
+    top: 0px;
+    overflow: hidden;
+}
