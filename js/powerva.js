@@ -28,12 +28,12 @@ const styleOptions = {
     // Avatar
     avatarBorderRadius: '50%',
     avatarSize: 40,
-    botAvatarBackgroundColor: '#FFFFFF',
-    botAvatarImage: 'https://docs.microsoft.com/en-us/azure/bot-service/v4sdk/media/logo_bot.svg',
-    botAvatarInitials: 'UR',
+    botAvatarBackgroundColor: '#2BAAB1',
+    botAvatarImage: 'img/icons/robot.svg',
+    botAvatarInitials: '',
     // userAvatarBackgroundColor: undefined,
-    userAvatarImage: 'https://docs.microsoft.com/en-us/azure/bot-service/v4sdk/media/logo_bot.svg',
-    userAvatarInitials: 'Guest',
+    userAvatarImage: 'img/icons/person-fill.svg',
+    userAvatarInitials: '',
     // showAvatarInGroup: 'status',
 
     // Bubble
