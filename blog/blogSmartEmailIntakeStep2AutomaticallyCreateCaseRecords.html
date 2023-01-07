@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>Smart Email intake using AI models, step 2 Automatically Create Case Records</title>	
+
+		<meta name="keywords" content="Urs Rüegg | Smart Email intake. Step 2 Automatically Create Case Records " />
+		<meta name="description" content="Smart Email intake using AI models, step 2 Automatically Create Case Records">
+		<meta name="copyright" content="© Copyright 2022 by Urs Rüegg. All Rights Reserved." />
+		<meta name="author" content="Urs Rüegg">
+		<meta name="contact" content="urs.ruegg@microsoft.com">
+		<meta name="thumbnail" content="https://www.ursruegg.com/img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_04.png" />
+		<meta name="og:title" property="og:title" content="Smart Email intake. Step 2 Automatically Create Case Records">
+		<meta name="twitter:card" content="Smart Email intake. Step 1 Create Solution">
+		<meta name="robots" content="index, follow">
+		<link rel="canonical" href="https://www.ursruegg.com/">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
+		<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="stylesheet" href="../css/theme-elements.css">
+		<link rel="stylesheet" href="../css/theme-blog.css">
+		<link rel="stylesheet" href="../css/theme-shop.css">
+
+		<!-- Revolution Slider CSS -->
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="../css/ursruegg.css">
+
+		<!-- Skin CSS -->
+		<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="../vendor/modernizr/modernizr.min.js"></script>
+	</head>
+	<body data-plugin-page-transition>
+
+		<div class="body">
+			<!-- Header -->
+			<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
+				data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+				<div class="header-body bg-color-dark box-shadow-none">
+					<div class="header-container header-container-height-sm container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="../index.html">
+											<img alt="ursruegg | Website" width="40" height="40"
+												src="../img/logos/ursruegg_icon_180x180.png">
+										</a>
+									</div>
+								</div>
+							</div>
+							<!-- Navigation -->
+							<div class="header-column justify-content-end me-lg-4">
+								<div class="header-row">
+									<div
+										class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
+										<div
+											class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li>
+														<a class="nav-link" href="../index.html">
+															Home
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="../blog.html">
+															Blog
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="../search.html">
+															Search
+														</a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+										<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
+											href="../aboutme.html">About Me</a>
+										<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+											data-bs-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		
+			<!-- Main -->
+			<div role="main" class="main">
+		
+				<!-- Container 1 - Intro -->
+				<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
+					<div class="container">
+						<div class="col-md-12 align-self-center order-1">
+							<ul class="breadcrumb d-block text-center">
+								<li><a href="../index.html">Home</a></li>
+								<li><a href="../blog.html">Blog</a></li>
+								<li class="active">Smart Email intake. Step 2 Automatically Create Case Records</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+		
+				<!-- Container 2 - Section -->
+				<section class="section section-light section-no-border m-0">
+					<div class="container py-4">
+		
+						<div class="row">
+							<div class="col">
+								<div class="blog-posts single-post">
+		
+									<!-- Container - Article  header-->
+									<article class="post post-large blog-single-post border-0 m-0 p-0">
+										<div class="post-image">
+											<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_04.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
+										</div>
+										<p></p>
+		
+										<div class="post-date ms-0">
+											<span class="day">4</span>
+											<span class="month">Jan</span>
+										</div>
+		
+										<div class="post-content ms-0">
+		
+											<h2 class="font-weight-semi-bold"><a href="../blog/blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Smart Email intake. <br>Step 2 - Automatically Create Case Records</a></h2>
+		
+											<div class="post-meta">
+												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+												<span><i class="far fa-folder"></i>
+													<a href="#">Azure</a>,
+													<a href="#">AI</a>,
+													<a href="#">Digital</a>,
+													<a href="#">Dynamics</a>,
+													<a href="#">Power Platform</a>,
+												</span>
+											</div>
+		
+											<!-- Container - Article content -->
+		
+											<h4>Smart Email intake. <br>Step 2 - Automatically Create Case Records</h4>
+		
+											<p>In the first step we laid the foundation, now let’s monitor mailboxes to intake Emails and prepare them for smart analysis.</p>
+											
+											<p>You can automatically create or update system or custom records from incoming activities, such as emails, social activities, and custom activities. In this section, you'll learn about creating rules for automatically creating records for cases from incoming emails.</p>
+											
+											<h4>Prerequisites</h4>
+
+											<p>Make sure that the following prerequisites are met:</p>
+
+											<ul>
+												<li>Permissions, roles, and the Power Automate license to create automatic record creation rules.</li>
+												<li>Information on the queues for which you want to create the rules. In our case we use support@ursruegg.com</li> 
+											</ul>
+
+											<h4>Configure rules for creating or updating records automatically</h4>
+
+											<p>You can configure a rule that when active will be run for incoming emails. By using the feature to create rules, you can define the conditions for when a rule can be run.</p>
+
+											<p>You can configure the rules in the <strong>Customer Service admin center</strong> or <strong>Customer Service Hub</strong>  app.</p>
+											
+											<ol>
+												<li>Open Customer Service Hub app and select Service Management.</li>
+												<li>Select Automatic record creation and update rules in Case Settings. The Record Creation and Update Rules page is displayed.</li>
+												<li>Select New. The New Record Creation and Update Rule page is displayed.</li>
+												<li>On the Basic tab, in Step one details, enter the following details:</li>
+												<ul>
+													<li><strong>Rule name:</strong> Enter a name for the rule  “Support Email to Case”.</li>
+													<li><strong>Queue to monitor:</strong> Select a queue on which the rule will be activated. For email activity, you must select a queue to be able to activate the rule.  Support queue</li>
+													<li><strong>Activity type to monitor:</strong> Select Email in the list.</li>
+													<p></p>
+													<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_02.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">4.	On the Basic tab, in Step one details, enter the details</span>
+														</span>
+													</span>
+												</span>
+													<p></p>
+
+												</ul>
+												<li>Select Save. The Step two: conditions to evaluate and actions to take area is enabled.</li>
+												<li>In Step two: conditions to evaluate and actions to take, select New. The Condition builder page is displayed.</li>
+												
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_03.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">In Step two: conditions to evaluate and actions to take, select New. The Condition builder page is displayed.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+												
+												<li>Perform the following steps:</li>
+												<ul>
+													<li>In Condition > Condition name, enter “Standard create case from email rule” name.</li>
+													<li>In Condition that must pass to continue (pass if blank), select Add.</li>
+													<li>Use the following options to define the criteria for the rule to be evaluated:</li>
+													<ul>
+														<li>Add row</li>
+														<li>Add group</li>
+														<li>Add related entity</li>
+													</ul>
+												</ul>
+												<li>In Actions to take > Record to create, make sure the value is “Case”. A case will be created if the conditions specified are met for the email activity.</li>
+												<li>In Configure in Power Automate, select Save and open in Power Automate. The Power Automate application opens in a new tab where you can configure criteria that must be evaluated for the email activity.</li>
+												<li>Add the following additional variables steps</li>
+												<p></p>
+
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th>
+																Step
+															</th>
+															<th>
+																Initialize variable AI Builder Language
+															</th>
+															<th>
+																Initialize variable AI Builder Language Confidence Score
+															</th>
+															<th>
+																Initialize variable AI Builder Category Tag
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																Name
+															</td>
+															<td>
+																ai_builder_language
+															</td>
+															<td>
+																ai_builder_language_confidence_score
+															</td>
+															<td>
+																ai_builder_language_category_tag
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Type
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Value
+															</td>
+															<td>
+																en
+															</td>
+															<td>
+																0
+															</td>
+															<td>
+																none
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<p>See results</p>
+
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_05.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add the following additional variables steps.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+												
+												<p></p>
+												<li>Add a Flow Scope step and name it “Analyse Email using AI Builder models”</li>
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_06.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add a Flow Scope step and name it “Analyse Email using AI Builder models”</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+												
+												<li>Add a Flow Step “Content Conversation” and name it “Convert email to plain text by inputting 'Description' dynamic content”</li>
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_07.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add a Flow Step “Content Conversation” and name it “Convert email to plain text by inputting 'Description' dynamic content”.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+												
+												<li>Add a Flow Scope and name it “AI Builder Language Detection”</li>
+												<li>Add a AI Builder Step “Detect the language being used in text” and name it “Detect the language being used in text”</li>
+												<li>Set Test to the result of the “Content Conversation” output</li>
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_08.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Set Test to the result of the “Content Conversation” output.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+												
+												<li>Add a Flow Step “Set variable” and name it “Set variable AI Builder Language”. Choose the “ai_builder_language” variable for Name and for Value “Language” result from the AI Builder.</li>
+												<li>Add a Condition step to check if detected language confidence score is valid <=1 and >=0.</li>
+												<li>Add in “If yes” a new Flow step Set variable and name it “Set variable AI Builder Language Confidence Score”. Set Name equal ai_builder_language_confidence_score and Value equal User Input Confidence score of the AI Builder output.</li>
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_09.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add in “If yes” a new Flow step Set variable and name it “Set variable AI Builder Language Confidence Score”. Set Name equal ai_builder_language_confidence_score and Value equal User Input Confidence score of the AI Builder output.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+												
+												<li>Go to step “Create a record (don't rename this step)” and open it to add additional fields to create the case record containing detected language and confidence score.</li>
+												<ul>
+													<li>Set Description field to the output value of the “Content Conversation” output</li>
+													<li>Set Language field to the variable ai_builder_language</li>
+													<li>Set Language Score field to ai_builder_language_confidence_score</li>
+												</ul>
+
+												<p></p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_20.png"
+															class="img-fluid" alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Go to step “Create a record (don't rename this step)” and open it to add additional fields to create the case record containing detected language and confidence score.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+
+												<li>Save it and test it by sending a first Email sample. Check if a case is created with associated contact and email activity.</li>
+											</ol>
+											
+											<p></p>
+
+											<h5>Steps by step guide</h5>
+
+											<ol>
+												<li><a href="./blogSmartEmailIntakeStep1CreateSolution.html">Create a solution “Case Management”</a></li>
+												<li><a href="./blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Create a Automatically create Case records from Email ruleset</a></li>
+												<li><a href="./blogSmartEmailIntakeStep3CreateFlowToTranslate.html">Create instant flow “TranslateCasesToTargetLanguage”</a></li>
+												<li><a href="./blogSmartEmailIntakeStep4AIBuilderCategoryClassification.html">AI Builder category classification custom model</a></li>
+												<li><a href="./blogSmartEmailIntakeStep5ExtendAutomaticallyCreateCaseFlow.html">Extend Automatically create Case flow with AI Builder models</a></li>
+												<li><a href="./blogSmartEmailIntakeStep6ConfigureUnifiedRouting.html">Configure Unified Routing based on Category Tags to Agents</a></li>
+											</ol>
+
+											<!-- Container - Article footer -->
+											<hr class="solid my-5">
+											<p>4. Jan 2023</p>
+		
+											<h4 class="mb-3">References</h4>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+													href="https://learn.microsoft.com/en-us/dynamics365/customer-service/automatically-create-update-records?tabs=customerservicehub" target="_blank"> Automatically create or update records in Dynamics 365 Customer Service | Microsoft Learn</a></li>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/power-automate/getting-started" target="_blank"> Get started with Power Automate (contains video) - Power Automate | Microsoft Learn</a></li>
+													
+											<!-- Container - Article author -->
+											<div class="post-block mt-4 pt-2 post-author">
+												<h4 class="mb-3">Author</h4>
+												<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+													<a href="../aboutme.html">
+														<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+													</a>
+												</div>
+												<p><strong class="name"><a href="../aboutme.html"
+															class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
+												</p>
+												<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+											</div>
+		
+		
+										</div>
+									</article>
+		
+								</div>
+							</div>
+						</div>
+		
+					</div>
+				</section>
+		
+			</div>
+
+			<!-- Dynamics 365 Marketing website analytics -->
+			<div id="dwo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"></div>
+			<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
+			<div class="d365-mkt-config" style="display:none" data-website-id="wo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"
+				data-hostname="bb84a5e7a68443feb00441dba87befd0.svc.dynamics.com"></div>
+
+			<!-- Footer -->
+			<footer id="footer" class="bg-color-quaternary">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
+								<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
+											class="fab fa-linkedin-in text-2"></i></a></li>
+								<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
+											class="fab fa-github text-2"></i></a></li>
+								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
+											class="fab fa-twitter text-2"></i></a></li>
+							</ul>
+							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		
+		</div>
+
+		<!-- Vendor -->
+		<script src="../vendor/plugins/js/plugins.min.js"></script>
+		<script src="../vendor/instafeed/instafeed.min.js"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="../js/theme.js"></script>
+
+		<!-- Revolution Slider Scripts -->
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Current Page Vendor and Views -->
+		<script src="../js/views/view.contact.js"></script>
+
+		<!-- Demo -->
+		<script src="../js/demos/demo-gym.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="../js/custom.js"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="../js/theme.init.js"></script>
+
+	</body>
+</html>
