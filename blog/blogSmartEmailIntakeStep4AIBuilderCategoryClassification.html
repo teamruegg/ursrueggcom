@@ -1,329 +1,774 @@
 <!DOCTYPE html>
 <html>
-	<head>
 
-		<!-- Basic -->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+<head>
 
-		<title>Smart Email intake using AI models, step 4 AI Builder category classification custom model</title>	
+	<!-- Basic -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<meta name="keywords" content="Urs Rüegg | Smart Email intake. Step 4 AI Builder category classification custom model" />
-		<meta name="description" content="Smart Email intake using AI models, step 4 AI Builder category classification custom model">
-		<meta name="copyright" content="© Copyright 2022 by Urs Rüegg. All Rights Reserved." />
-		<meta name="author" content="Urs Rüegg">
-		<meta name="contact" content="urs.ruegg@microsoft.com">
-		<meta name="thumbnail" content="https://www.ursruegg.com/img/digital/CaseManagement/CaseManagementProcessOverview.png" />
-		<meta name="og:title" property="og:title" content="Smart Email intake. Step 4 AI Builder category classification custom model">
-		<meta name="twitter:card" content="Smart Email intake. Step 4 AI Builder category classification custom model">
-		<meta name="robots" content="index, follow">
-		<link rel="canonical" href="https://www.ursruegg.com/">
+	<title>Smart Email intake using AI models, step 4 AI Builder category classification custom model</title>
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+	<meta name="keywords"
+		content="Urs Rüegg | Smart Email intake. Step 4 AI Builder category classification custom model" />
+	<meta name="description"
+		content="Smart Email intake using AI models, step 4 AI Builder category classification custom model">
+	<meta name="copyright" content="© Copyright 2022 by Urs Rüegg. All Rights Reserved." />
+	<meta name="author" content="Urs Rüegg">
+	<meta name="contact" content="urs.ruegg@microsoft.com">
+	<meta name="thumbnail"
+		content="https://www.ursruegg.com/img/digital/CaseManagement/CaseManagementProcessOverview.png" />
+	<meta name="og:title" property="og:title"
+		content="Smart Email intake. Step 4 AI Builder category classification custom model">
+	<meta name="twitter:card" content="Smart Email intake. Step 4 AI Builder category classification custom model">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://www.ursruegg.com/">
 
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 
-		<!-- Web Fonts  -->
-		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet" type="text/css">
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
-		<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
-		<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
-		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
-		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
-		<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+	<!-- Web Fonts  -->
+	<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+		rel="stylesheet" type="text/css">
 
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="../css/theme.css">
-		<link rel="stylesheet" href="../css/theme-elements.css">
-		<link rel="stylesheet" href="../css/theme-blog.css">
-		<link rel="stylesheet" href="../css/theme-shop.css">
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
+	<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
 
-		<!-- Revolution Slider CSS -->
-		<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
-		<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
-		<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="../css/theme.css">
+	<link rel="stylesheet" href="../css/theme-elements.css">
+	<link rel="stylesheet" href="../css/theme-blog.css">
+	<link rel="stylesheet" href="../css/theme-shop.css">
 
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="../css/ursruegg.css">
+	<!-- Revolution Slider CSS -->
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
 
-		<!-- Skin CSS -->
-		<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../css/ursruegg.css">
 
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="../css/custom.css">
+	<!-- Skin CSS -->
+	<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
 
-		<!-- Head Libs -->
-		<script src="../vendor/modernizr/modernizr.min.js"></script>
-	</head>
-	<body data-plugin-page-transition>
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="../css/custom.css">
 
-		<div class="body">
-			<!-- Header -->
-			<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
-				data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
-				<div class="header-body bg-color-dark box-shadow-none">
-					<div class="header-container header-container-height-sm container">
-						<div class="header-row">
-							<div class="header-column">
-								<div class="header-row">
-									<div class="header-logo">
-										<a href="../index.html">
-											<img alt="ursruegg | Website" width="40" height="40"
-												src="../img/logos/ursruegg_icon_180x180.png">
-										</a>
-									</div>
+	<!-- Head Libs -->
+	<script src="../vendor/modernizr/modernizr.min.js"></script>
+</head>
+
+<body data-plugin-page-transition>
+
+	<div class="body">
+		<!-- Header -->
+		<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
+			data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+			<div class="header-body bg-color-dark box-shadow-none">
+				<div class="header-container header-container-height-sm container">
+					<div class="header-row">
+						<div class="header-column">
+							<div class="header-row">
+								<div class="header-logo">
+									<a href="../index.html">
+										<img alt="ursruegg | Website" width="40" height="40"
+											src="../img/logos/ursruegg_icon_180x180.png">
+									</a>
 								</div>
 							</div>
-							<!-- Navigation -->
-							<div class="header-column justify-content-end me-lg-4">
-								<div class="header-row">
+						</div>
+						<!-- Navigation -->
+						<div class="header-column justify-content-end me-lg-4">
+							<div class="header-row">
+								<div
+									class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
 									<div
-										class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
-										<div
-											class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
-											<nav class="collapse">
-												<ul class="nav nav-pills" id="mainNav">
-													<li>
-														<a class="nav-link" href="../index.html">
-															Home
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="../blog.html">
-															Blog
-														</a>
-													</li>
-													<li>
-														<a class="nav-link" href="../search.html">
-															Search
-														</a>
-													</li>
-												</ul>
-											</nav>
-										</div>
-										<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
-											href="../aboutme.html">About Me</a>
-										<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
-											data-bs-target=".header-nav-main nav">
-											<i class="fas fa-bars"></i>
-										</button>
+										class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+										<nav class="collapse">
+											<ul class="nav nav-pills" id="mainNav">
+												<li>
+													<a class="nav-link" href="../index.html">
+														Home
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="../blog.html">
+														Blog
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="../search.html">
+														Search
+													</a>
+												</li>
+											</ul>
+										</nav>
 									</div>
+									<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
+										href="../aboutme.html">About Me</a>
+									<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+										data-bs-target=".header-nav-main nav">
+										<i class="fas fa-bars"></i>
+									</button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</header>
-		
-			<!-- Main -->
-			<div role="main" class="main">
-		
-				<!-- Container 1 - Intro -->
-				<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
-					<div class="container">
-						<div class="col-md-12 align-self-center order-1">
-							<ul class="breadcrumb d-block text-center">
-								<li><a href="../index.html">Home</a></li>
-								<li><a href="../blog.html">Blog</a></li>
-								<li class="active">Smart Email intake. Step 4 AI Builder category classification custom model</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-		
-				<!-- Container 2 - Section -->
-				<section class="section section-light section-no-border m-0">
-					<div class="container py-4">
-		
-						<div class="row">
-							<div class="col">
-								<div class="blog-posts single-post">
-		
-									<!-- Container - Article  header-->
-									<article class="post post-large blog-single-post border-0 m-0 p-0">
-										<div class="post-image">
-											<img src="../img/digital/CaseManagement/CaseManagementSolution_02.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
-										</div>
-										<p></p>
-		
-										<div class="post-date ms-0">
-											<span class="day">6</span>
-											<span class="month">Jan</span>
-										</div>
-		
-										<div class="post-content ms-0">
-		
-											<h2 class="font-weight-semi-bold"><a href="../blog/blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Smart Email intake. Step 4 - AI Builder category classification custom model</a></h2>
-		
-											<div class="post-meta">
-												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
-												<span><i class="far fa-folder"></i>
-													<a href="#">Azure</a>,
-													<a href="#">AI</a>,
-													<a href="#">Digital</a>,
-													<a href="#">Dynamics</a>,
-													<a href="#">Power Platform</a>,
-												</span>
-											</div>
-		
-											<!-- Container - Article content -->
-		
-											<h4>Smart Email intake. Step 4 - AI Builder category classification custom model</h4>
-		
-											<p>Now we can build custom AI models to analyze customer intent and context using Power AI Builder category classification custom models. We want to support multi languages and there are two approaches to consider:</p>
-		
-											<ol>
-												<li><strong>Use one common language model</strong> – In this case you need to translate all emails into the common language, for example English and use the translated content for the classification models.</li>
-												<li><strong>Use for each language dedicated models</strong> – In this case you need to establish for each supported language a dedicated and trained model.</li>
-											</ol>
+			</div>
+		</header>
 
+		<!-- Main -->
+		<div role="main" class="main">
+
+			<!-- Container 1 - Intro -->
+			<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
+				<div class="container">
+					<div class="col-md-12 align-self-center order-1">
+						<ul class="breadcrumb d-block text-center">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li class="active">Smart Email intake. Step 4 AI Builder category classification custom
+								model</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Container 2 - Section -->
+			<section class="section section-light section-no-border m-0">
+				<div class="container py-4">
+
+					<div class="row">
+						<div class="col">
+							<div class="blog-posts single-post">
+
+								<!-- Container - Article  header-->
+								<article class="post post-large blog-single-post border-0 m-0 p-0">
+									<div class="post-image">
+										<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_15.png"
+											class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+									</div>
+									<p></p>
+
+									<div class="post-date ms-0">
+										<span class="day">6</span>
+										<span class="month">Jan</span>
+									</div>
+
+									<div class="post-content ms-0">
+
+										<h2 class="font-weight-semi-bold"><a
+												href="../blog/blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Smart
+												Email intake.<br>Step 4 - AI Builder category classification custom
+												model</a></h2>
+
+										<div class="post-meta">
+											<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+											<span><i class="far fa-folder"></i>
+												<a href="#">Azure</a>,
+												<a href="#">AI</a>,
+												<a href="#">Digital</a>,
+												<a href="#">Dynamics</a>,
+												<a href="#">Power Platform</a>,
+											</span>
+										</div>
+
+										<!-- Container - Article content -->
+
+										<h4>Smart Email intake. <br>Step 4 - AI Builder category classification custom
+											model</h4>
+
+										<p>The volume of text data is increasing exponentially for organizations.
+											Channels such as email, documents, and social media contribute increasing
+											amounts of text data. This data carries valuable information that—when
+											extracted and acted on—helps you provide better services to your customers.
+										</p>
+										<p>Now we can build custom AI models to analyze customer intent and context
+											using Power AI Builder category classification custom models. We want to
+											support multi languages and there are two approaches to consider:</p>
+
+										<ol>
+											<li><strong>Use one common language model</strong> – In this case you need
+												to translate all emails into the common language, for example English
+												and use the translated content for the classification models.</li>
+											<li><strong>Use for each language dedicated models</strong> – In this case
+												you need to establish for each supported language a dedicated and
+												trained model.</li>
+										</ol>
+
+										<p>Booth approaches has their advantages and disadvantages</p>
+
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>
+														Comparison
+													</th>
+													<th>
+														Common Model
+													</th>
+													<th>
+														Dedicated Models
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														Advantages
+													</td>
+													<td>
+														Supports any languages <br>
+														Simplifies the maintenance to train and retrain the model
+													</td>
+													<td>
+														Higher accuracy to identify customer intent.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														Disadvantages
+													</td>
+													<td>
+														Lower accuracy to identify customer intent. Some terms/sentence
+														are vey specific to the language
+													</td>
+													<td>
+														Higher maintenance to train and retrain the models
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+										<p></p>
+
+										<h4>Prerequisites</h4>
+										<ul>
+											<li>This model requires the training data to be available within a Dataverse
+												table. In our case we’ll use Cases and have loaded some test data.</li>
+											<li>Make sure your administrator has assigned you a security role with
+												Read privilege for the table that has the training data.</li>
+										</ul>
+
+										<p></p>
+
+										<h4>Data preparation</h4>
+
+										<p>The training data used to train the model from the Dataverse table should
+											conform to the following:</p>
+
+										<ul>
+											<li>Store text and tags as two columns in the same table. Each row must have
+												data in the Text column.</li>
+											<li>You can provide one or more tags to data in the same row in the Text
+												column.</li>
+											<li>If you've identified multiple tags within the text sample, provide them
+												as delimited text in the Tags fields. We use semicolons (;) as tag
+												separators. For example:</li>
+											<p></p>
 											<table class="table table-striped">
 												<thead>
 													<tr>
 														<th>
-															Customer
+															Description
 														</th>
 														<th>
-															Simple
-														</th>
-														<th>
-															Complex
+															Category Tags
 														</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>
-															Email per year
+															<p>Please make the following resignation.</p>
+
+															<p>Contract 0DB78F</p>
+
+															<p>AHV numbers 756.9950.7311.96</p>
+
+															Hansrudolf Muster<br>
+															Obere Musterstrasse 18b<br>
+															8000 Zurich<br>
+
 														</td>
 														<td>
-															100’000
+															Pension fund; Withdrawal;
+														</td>
+
+													</tr>
+													<tr>
+														<td>
+															<p>Hello</p>
+
+															<p>Unfortunately, I had an accident and have a question
+																about it.
+
+																My vehicle AI3214. Can you clarify how high my
+																deductible is?</p>
+
+															<p>Many thanks for the prompt clarification</p>
+
+															Best regards,<br>
+															Marc Brühlhard<br>
+															Bahnofstrasse 13<br>
+
 														</td>
 														<td>
-															500’000
+															Vehicle Insurance; Deductible;
 														</td>
+
 													</tr>
 												</tbody>
 											</table>
+											<li>Make sure to have a minimum of 10 distinct text samples for each tag to
+												be extracted. Tags with fewer than 10 samples won't be trained. </li>
+											<li>If Cases has been tagged in fewer than 10 rows in the data, it will be
+												ignored. The model won't be trained to categorize data for that tag.
+											</li>
+											<li>For every tag that is used, provide a minimum of 10 text samples where
+												it isn't used.</li>
+										</ul>
 
+										<h4>Steps to prepare sample data</h4>
+
+										<ol>
+											<li>In our case we can send Email with sample text to support@ursruegg.com
+												and the automatically create records rule creates for each Email a new
+												case.</li>
+											<li>Prepare and send at least 10 Emails with sample data</li>
+											<li>Open “Customer Service Hub” and select cases.</li>
+											<li>Open the view “Active Case Analytics” and check if the cases with the
+												sample data is there.</li>
+											<li>Select “Export to Excel” – “Open in Excel Online”</li>
+											<li>Update the Category Tag for each case. In our case we defined the
+												following tags based products and customer intent</li>
+											<ul>
+												<li>Pension fund; Withdrawal; Admission; Wage change;</li>
+												<li>Vehicle Insurance; Deductible;</li>
+											</ul>
 											<p></p>
-
 											<span
 												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
 												<span class="thumb-info-wrapper">
-													<img src="../img/digital/CaseManagement/CaseManagementSolution_02.png"
-														class="img-fluid" alt="High-level functional process overview with domain options">
+													<img src="../img/digital/CaseManagement/CaseManagementSolution_06.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner line-height-1">Case Management</span>
-														<span class="thumb-info-type opacity-6">High-level functional process overview with domain options.</span>
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">Update the Category Tag
+															for each case. In our case we defined the following tags
+															based products and customer intent.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>Select “Save” and the updated cases including the category tags will be
+												imported</li>
+											<li>Go back to the view “Active Case Analytics” and check if the category
+												tags are updated</li>
+										</ol>
+
+										<p></p>
+
+										<blockquote class="blockquote-primary">
+											<h5>Keep in mind</h5>
+											<ul>
+												<li>A table must have at least <strong>two tags</strong>, and each one
+													must have <strong>10 text samples</strong>.</li>
+												<li>You can define up to <strong>200 distinct tags</strong>. Each tag is
+													a category that will be identified and extracted from the given
+													text.</li>
+												<li>Each sample of text data must have <strong>fewer than 5’000
+														characters</strong>. </li>
+												<li>In our case we use the Case Description column with configured
+													<strong>max size of 2’000 characters</strong> out-of-the-box. </li>
+												<li>If you need to support <strong>more than 2’000 characters</strong>,
+													you can create a new column of “Multiple line of text” – “Plain
+													text” that <strong>support max size of 1’048’576
+														characters</strong>. Review the “Description Translated” column.
+												</li>
+											</ul>
+										</blockquote>
+
+										<h4>Create a category classification custom model</h4>
+
+										<p>Now that you have your training data in Microsoft Dataverse, you can create a
+											new model and configure it.</p>
+
+										<ol>
+											<li>Sign in to Power Apps (<a href="https://make.powerapps.com/"
+													target="_blank">https://make.powerapps.com/</a>) and then select AI
+												Builder > Explores.</li>
+											<li>Select Text.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_02.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">AI Builder > Explores >
+															Select Text.</span>
 													</span>
 												</span>
 											</span>
 
 											<p></p>
 
-											<h5>Steps by step guide</h5>
+											<li>Select Category classification - Classify texts into custom categories.
+											</li>
+											<li>Read the Classify texts into custom categories page, and then select Get
+												started.</li>
+											<li>The Category classification tile step by step window opens.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_03.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">The Category
+															classification tile step by step window opens.</span>
+													</span>
+												</span>
+											</span>
 
-											<ol>
-												<li><a href="./blogSmartEmailIntakeStep1CreateSolution.html">Create a solution “Case Management”</a></li>
-												<li><a href="./blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Create a Automatically create Case records from Email ruleset</a></li>
-												<li><a href="./blogSmartEmailIntakeStep3CreateFlowToTranslate.html">Create instant flow “TranslateCasesToTargetLanguage”</a></li>
-												<li><a href="./blogSmartEmailIntakeStep4AIBuilderCategoryClassification.html">AI Builder category classification custom model</a></li>
-												<li><a href="./blogSmartEmailIntakeStep5ExtendAutomaticallyCreateCaseFlow.html">Extend Automatically create Case flow with AI Builder models</a></li>
-												<li><a href="./blogSmartEmailIntakeStep6ConfigureUnifiedRouting.html">Configure Unified Routing based on Category Tags to Agents</a></li>
-											</ol>
+											<p></p>
+											<li>Change the model name to “Case Category Classification English”</li>
+											<li>Choose “Select text”, select the table “Case”, select the column
+												“Description Translated” where your training text is stored, and then
+												choose Select column.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_04.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">Choose “Select text”,
+															select the table “Case”, select the column “Description
+															Translated” where your training text is stored, and then
+															choose Select column.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>Select Next. See result</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_05.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">Select Next. See
+															result.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>Choose Select tags, select the column “Category Tags Translated” where
+												the tags are stored, and then choose Select column.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_07.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">Choose Select tags,
+															select the column “Category Tags Translated” where the tags
+															are stored, and then choose Select column.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>(If not pre-selected) Select the separator you used for your tags, in
+												our case “Semicolon” and then select Next.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_08.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">(If not pre-selected)
+															Select the separator you used for your tags, in our case
+															“Semicolon” and then select Next.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>Review your text and tags to verify the data and the configuration you
+												applied, and then select Next.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_09.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">Review your text and
+															tags to verify the data and the configuration you applied,
+															and then select Next.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>Select the language “English” you want to use for training, and then
+												select Next.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_10.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">Select the language
+															“English” you want to use for training, and then select
+															Next.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>To begin training your category classification model, review your
+												configuration, and then select Train.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_11.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">To begin training your
+															category classification model, review your configuration,
+															and then select Train.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>When it's ready, you'll be notified.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_12.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">When it's ready, you'll
+															be notified.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>After each training, AI Builder uses the test dataset to evaluate the
+												quality and accuracy of your AI model. A summary page for your model
+												shows your model training results, including a Performance score.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_13.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">After each training, AI
+															Builder uses the test dataset to evaluate the quality and
+															accuracy of your AI model. A summary page for your model
+															shows your model training results, including a Performance
+															score.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>You can also select Quick Test to assess the quality of the model. Just
+												enter text that you want to tag.</li>
+											<p></p>
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/CaseManagement/AIBuilderCreateCaseCategoryClassificationModel_15.png"
+														class="img-fluid"
+														alt="High-level functional process overview with domain options">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Case
+															Management</span>
+														<span class="thumb-info-type opacity-6">As a result you should
+															get category tags with a confidence score.</span>
+													</span>
+												</span>
+											</span>
+											<p></p>
+											<li>As a result you should get category tags with a confidence score</li>
+										</ol>
 
-											<!-- Container - Article footer -->
-											<hr class="solid my-5">
-											<p>5. Jan 2023</p>
-		
-											<h4 class="mb-3">References</h4>
-											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
-													href="https://learn.microsoft.com/en-us/ai-builder/prebuilt-language-detection" target="_blank"> Language
-													detection prebuilt AI model - AI Builder | Microsoft Learn</a></li>
-														
-											<!-- Container - Article author -->
-											<div class="post-block mt-4 pt-2 post-author">
-												<h4 class="mb-3">Author</h4>
-												<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
-													<a href="../aboutme.html">
-														<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
-													</a>
-												</div>
-												<p><strong class="name"><a href="../aboutme.html"
-															class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
-												</p>
-												<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+										<p>That's it! Now you have the first trained AI model. </p>
+											
+										<p>Now we need to establish
+											for each supported language a dedicated Category Classification model. In
+											our case we want to support English, French and French.</p>
+
+										<p></p>
+
+										<h5>Steps by step guide</h5>
+
+										<ol>
+											<li><a href="./blogSmartEmailIntakeStep1CreateSolution.html">Create a
+													solution “Case Management”</a></li>
+											<li><a
+													href="./blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Create
+													a Automatically create Case records from Email ruleset</a></li>
+											<li><a href="./blogSmartEmailIntakeStep3CreateFlowToTranslate.html">Create
+													instant flow “TranslateCasesToTargetLanguage”</a></li>
+											<li><a
+													href="./blogSmartEmailIntakeStep4AIBuilderCategoryClassification.html">AI
+													Builder category classification custom model</a></li>
+											<li><a
+													href="./blogSmartEmailIntakeStep5ExtendAutomaticallyCreateCaseFlow.html">Extend
+													Automatically create Case flow with AI Builder models</a></li>
+											<li><a href="./blogSmartEmailIntakeStep6ConfigureUnifiedRouting.html">Configure
+													Unified Routing based on Category Tags to Agents</a></li>
+										</ol>
+
+										<!-- Container - Article footer -->
+										<hr class="solid my-5">
+										<p>6. Jan 2023</p>
+
+										<h4 class="mb-3">References</h4>
+										<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/ai-builder/text-classification-overview"
+												target="_blank"> Overview of category classification model - AI Builder
+												| Microsoft Learn</a></li>
+										<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/ai-builder/prebuilt-language-detection"
+												target="_blank"> Language detection prebuilt AI model - AI Builder |
+												Microsoft Learn</a></li>
+										<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/ai-builder/prebuilt-text-translation"
+												target="_blank"> Text translation prebuilt AI model - AI Builder |
+												Microsoft Learn</a></li>
+
+										<!-- Container - Article author -->
+										<div class="post-block mt-4 pt-2 post-author">
+											<h4 class="mb-3">Author</h4>
+											<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+												<a href="../aboutme.html">
+													<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+												</a>
 											</div>
-		
-		
+											<p><strong class="name"><a href="../aboutme.html"
+														class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
+											</p>
+											<p>Solution Architect, Microsoft Technology Center, Zürich</p>
 										</div>
-									</article>
-		
-								</div>
+
+
+									</div>
+								</article>
+
 							</div>
 						</div>
-		
 					</div>
-				</section>
-		
-			</div>
 
-			<!-- Dynamics 365 Marketing website analytics -->
-			<div id="dwo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"></div>
-			<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
-			<div class="d365-mkt-config" style="display:none" data-website-id="wo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"
-				data-hostname="bb84a5e7a68443feb00441dba87befd0.svc.dynamics.com"></div>
-
-			<!-- Footer -->
-			<footer id="footer" class="bg-color-quaternary">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 text-center">
-							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
-								<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
-											class="fab fa-linkedin-in text-2"></i></a></li>
-								<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
-											class="fab fa-github text-2"></i></a></li>
-								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
-											class="fab fa-twitter text-2"></i></a></li>
-							</ul>
-							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
-						</div>
-					</div>
 				</div>
-			</footer>
-		
+			</section>
+
 		</div>
 
-		<!-- Vendor -->
-		<script src="../vendor/plugins/js/plugins.min.js"></script>
-		<script src="../vendor/instafeed/instafeed.min.js"></script>
+		<!-- Dynamics 365 Marketing website analytics -->
+		<div id="dwo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"></div>
+		<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
+		<div class="d365-mkt-config" style="display:none" data-website-id="wo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"
+			data-hostname="bb84a5e7a68443feb00441dba87befd0.svc.dynamics.com"></div>
 
-		<!-- Theme Base, Components and Settings -->
-		<script src="../js/theme.js"></script>
+		<!-- Footer -->
+		<footer id="footer" class="bg-color-quaternary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
+							<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
+										class="fab fa-linkedin-in text-2"></i></a></li>
+							<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
+										class="fab fa-github text-2"></i></a></li>
+							<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
+										class="fab fa-twitter text-2"></i></a></li>
+						</ul>
+						<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-		<!-- Revolution Slider Scripts -->
-		<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	</div>
 
-		<!-- Current Page Vendor and Views -->
-		<script src="../js/views/view.contact.js"></script>
+	<!-- Vendor -->
+	<script src="../vendor/plugins/js/plugins.min.js"></script>
+	<script src="../vendor/instafeed/instafeed.min.js"></script>
 
-		<!-- Demo -->
-		<script src="../js/demos/demo-gym.js"></script>
+	<!-- Theme Base, Components and Settings -->
+	<script src="../js/theme.js"></script>
 
-		<!-- Theme Custom -->
-		<script src="../js/custom.js"></script>
+	<!-- Revolution Slider Scripts -->
+	<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 
-		<!-- Theme Initialization Files -->
-		<script src="../js/theme.init.js"></script>
+	<!-- Current Page Vendor and Views -->
+	<script src="../js/views/view.contact.js"></script>
 
-	</body>
+	<!-- Demo -->
+	<script src="../js/demos/demo-gym.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="../js/custom.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="../js/theme.init.js"></script>
+
+</body>
+
 </html>

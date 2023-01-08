@@ -148,7 +148,7 @@
 									<!-- Container - Article  header-->
 									<article class="post post-large blog-single-post border-0 m-0 p-0">
 										<div class="post-image">
-											<img src="../img/digital/CaseManagement/CaseManagementSolution_02.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
+											<img src="../img/digital/CaseManagement/AutomaticRecordCreationEmailToCase_15.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
 										</div>
 										<p></p>
 		
@@ -159,7 +159,7 @@
 		
 										<div class="post-content ms-0">
 		
-											<h2 class="font-weight-semi-bold"><a href="../blog/blogSmartEmailIntakeStep5ExtendAutomaticallyCreateCaseFlow.html">Smart Email intake. Step 5 - Extend Automatically create Case flow with AI Builder models</a></h2>
+											<h2 class="font-weight-semi-bold"><a href="../blog/blogSmartEmailIntakeStep5ExtendAutomaticallyCreateCaseFlow.html">Smart Email intake. <br>Step 5 - Extend Automatically create Case flow with AI Builder models</a></h2>
 		
 											<div class="post-meta">
 												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
@@ -174,57 +174,108 @@
 		
 											<!-- Container - Article content -->
 		
-											<h4>Smart Email intake. Step 5 - Extend Automatically create Case flow with AI Builder models</h4>
+											<h4>Smart Email intake. <br>Step 5 - Extend Automatically create Case flow with AI Builder models</h4>
 		
-											<p>Now we can build custom AI models to analyze customer intent and context using Power AI Builder category classification custom models. We want to support multi languages and there are two approaches to consider:</p>
-		
+											<p>Now we can extend the standard out-of-the-box flow to analyze the content. We need to detect the Language of the Email content.</p>
+
 											<ol>
-												<li><strong>Use one common language model</strong> – In this case you need to translate all emails into the common language, for example English and use theNow we can extend the standard out-of-the-box flow to analyze the content. We need to detect the Language of the Email content.</li>
-												<li><strong>Use for each language dedicated models</strong> – In this case you need to establish for each supported language a dedicated and trained model.</li>
+												<li>Open Customer Service Hub app and select Service Management.</li>
+												<li>Select Automatic record creation and update rules in Case Settings. The Record Creation and Update Rules page is displayed.</li>
+												<li>Select “Support Email to Case” and open it.</li>
+												<li>On the Basic tab, in Step two select “In Configure in Power Automate”, select open in Power Automate.</li>
+												<li>Add the following additional variables steps</li>
+												<p></p>
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th>
+																Step
+															</th>
+															<th>
+																Initialize variable AI Builder Language
+															</th>
+															<th>
+																Initialize variable AI Builder Language Confidence Score
+															</th>
+															<th>
+																Initialize variable AI Builder Category Tag
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																Name
+															</td>
+															<td>
+																ai_builder _language
+															</td>
+															<td>
+																ai_builder _language _confidence_score
+															</td>
+															<td>
+																ai_builder _language _category_tag
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Type
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Value
+															</td>
+															<td>
+																en
+															</td>
+															<td>
+																0
+															</td>
+															<td>
+																none
+															</td>
+														</tr>
+													</tbody>
+												</table>
+	
+												<p></p>
+
+												<p>See results</p>
+
+												<li>Add a Flow Scope step and name it “Analyze Email using AI Builder models”</li>
+												<li>Add a “Html to text” to convert the Email HTML content to plain text and name it “Convert email to plain text by inputting 'Description' dynamic content”</li>
+												<li>Add “Description” column to the content field</li>
+
+												<li>Add a Flow Scope step and name it “AI Builder Language Detection”</li>
+												<li>Add a AI Builder Step “Detect the language being used in text” and name it “Detect the language being used in text”</li>
+												<li>Add the result of the Html to text conversion to the Text of the AI Builder step</li>
+												<li>Add a Flow Step “Set variable” and name it “Set variable AI Builder Language”. Choose the “ai_builder_language” variable for Name and for Value “Language” result from the AI Builder.</li>
+												<li>Add a Condition step to evaluate the detected language confidence score is a valid result between 0 and 1.</li>
+												<li>Add in “If yes” a new Flow step Set variable and name it “Set variable AI Builder Language Confidence Score”</li>
+												<li>For Name choose the variable “ai_builder_language_confidence_score” and for Value add the AI Builder Confidence Score result. See result</li>
+
+												<li>Add a Flow Scope step and name it “AI Builder Case Category Classification Detection”. Leave it empty as a placeholder. We will come back to extend this part after we’ve created and trained the AI Builder category classification models.</li>
+												<li>Select the Dataverse Step “Create a record (don't rename this step)” and update the Description equal to result of the Html to text conversion, Language equal to ai_builder_language variable and Language Score equal to ai_builder_language_confidence_score. See result</li>
+
+												<li>Select “Save” to update the flow with all your changes.</li>
+												<li>Go back to the “Record Creation and Update Rule Item”</li>
+												<li>Select Save & Close. The condition builder is closed.</li>
+												<li>In Step three: additional actions to take after matching with a condition, select an option based on your requirement for Automatically reply to email.</li>
+												<li>If you select Yes, select an email template in the Select email template list box.</li>
+
 											</ol>
-
-											<table class="table table-striped">
-												<thead>
-													<tr>
-														<th>
-															Customer
-														</th>
-														<th>
-															Simple
-														</th>
-														<th>
-															Complex
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															Email per year
-														</td>
-														<td>
-															100’000
-														</td>
-														<td>
-															500’000
-														</td>
-													</tr>
-												</tbody>
-											</table>
-
-											<p></p>
-
-											<span
-												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
-												<span class="thumb-info-wrapper">
-													<img src="../img/digital/CaseManagement/CaseManagementSolution_02.png"
-														class="img-fluid" alt="High-level functional process overview with domain options">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner line-height-1">Case Management</span>
-														<span class="thumb-info-type opacity-6">High-level functional process overview with domain options.</span>
-													</span>
-												</span>
-											</span>
+											
+											<p>Now we’ve created the rule set and are ready to test it. Send some example mail to the Email address and analyze the result in “Customer Service Hub” – “Cases” – “Active Case Analytics”.</p>
 
 											<p></p>
 

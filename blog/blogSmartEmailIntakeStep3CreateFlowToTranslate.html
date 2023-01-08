@@ -148,18 +148,18 @@
 									<!-- Container - Article  header-->
 									<article class="post post-large blog-single-post border-0 m-0 p-0">
 										<div class="post-image">
-											<img src="../img/digital/CaseManagement/CaseManagementSolution_02.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
+											<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_01.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
 										</div>
 										<p></p>
 		
 										<div class="post-date ms-0">
-											<span class="day">4</span>
+											<span class="day">5</span>
 											<span class="month">Jan</span>
 										</div>
 		
 										<div class="post-content ms-0">
 		
-											<h2 class="font-weight-semi-bold"><a href="../blog/blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Smart Email intake. Step 3 - Create instant flow to translate</a></h2>
+											<h2 class="font-weight-semi-bold"><a href="../blog/blogSmartEmailIntakeStep2AutomaticallyCreateCaseRecords.html">Smart Email intake. <br>Step 3 - Create instant flow to translate</a></h2>
 		
 											<div class="post-meta">
 												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
@@ -174,7 +174,7 @@
 		
 											<!-- Container - Article content -->
 		
-											<h4>Smart Email intake. Step 3 - Create instant flow to translate sample data into target language</h4>
+											<h4>Smart Email intake. <br>Step 3 - Create instant flow to translate sample data into target language</h4>
 		
 											<p>As we want to support three languages, English, French and German to analyze the Email content, we need to have sample data for each supported language. AI Builder has a Text translation prebuilt model and we can use it to translate the Case Description into a selected target language.</p>
 		
@@ -182,26 +182,46 @@
 												<thead>
 													<tr>
 														<th>
-															Customer
+															Column
 														</th>
 														<th>
-															Simple
-														</th>
-														<th>
-															Complex
+															Description
 														</th>
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>
-															Email per year
+															Description
 														</td>
 														<td>
-															100’000
+															Holds the plan text email content.
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Description Translated
 														</td>
 														<td>
-															500’000
+															Holds the translated to target language “Description” to be used in the AI Builder Category Classification model.
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Category Tags
+														</td>
+														<td>
+															<p>Holds the analyzed category tags of the Description text.</p>
+															<p>In a first iteration you will add the Category Tags manually. </p>
+															<p>After you’ve trained models, we’ll include the trained model into the “Automatically create Case records from Email” flow to analyze the Email content and get the Category Tags based on the trained model.</p>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Category Tags Translated
+														</td>
+														<td>
+															Holds the Category Tags to be used in the AI Builder Category Classification model.
 														</td>
 													</tr>
 												</tbody>
@@ -209,17 +229,313 @@
 
 											<p></p>
 
+											<p>Consider how to deal with single or multi-language model support</p>
+											<ul>
+												<li><strong>For a multi-language scenario,</strong> I recommend to keep the Category Tags in one common language, as we will use the Category Tags later to route the Case using Routing Rules to the skilled Agent. In our case we used English as the common language for tagging the categories.</li>
+												<li><strong>For a single-language scenario,</strong> I recommend to translate everything into one common language like English. And just use one common language model to analyze and route the cases.</li>
+											</ul>
+											
+											<p></p>
+
+											<h4>Prerequisites</h4>
+
+											<p>Make sure that the following prerequisites are met:</p>
+
+											<ul>
+												<li>Permissions, roles, and the Power Automate license to create automatic record creation rules.</li>
+												<li>Case entity prepared as described in <a href="./blogSmartEmailIntakeStep1CreateSolution.html">Create a solution “Case Management”</a> before.</li>
+											</ul>
+
+											<h4>Create Translate Cases to Target Language instant flow</h4>
+											
+											<p>The helper flow should be triggered manually passing a target language code value to translate the Description into the target language and persist it into Description Translated for later used to train the AI Builder model for different language. The building blocks are:</p>
+											
+											<ol>
+												<li>Define the used variables</li>
+												<li>Check user input</li>
+												<li>Get list of cases</li>
+												<li>Translate content to target language</li>
+											</ol>
+
 											<span
 												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
 												<span class="thumb-info-wrapper">
-													<img src="../img/digital/CaseManagement/CaseManagementSolution_02.png"
-														class="img-fluid" alt="High-level functional process overview with domain options">
+													<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_01.png" class="img-fluid"
+														alt="High-level functional process overview with domain options">
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner line-height-1">Case Management</span>
-														<span class="thumb-info-type opacity-6">High-level functional process overview with domain options.</span>
+														<span class="thumb-info-type opacity-6">Create Translate Cases to Target Language instant flow.</span>
 													</span>
 												</span>
 											</span>
+
+											<p></p>
+											<p>Now let’s create the helper flow</p>
+
+											<ol>
+												<li>Sign in to Power Apps (<a href="https://make.powerapps.com/"
+													target="_blank">https://make.powerapps.com/</a>) and then select Flows > Cloud flows.</li>
+												<li>Select “New flow” and select “Instant cloud flow”</li>
+												<li>Add the following additional variables steps</li>
+
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th>
+																Step
+															</th>
+															<th>
+																Initialize variable Target Language
+															</th>
+															<th>
+																Initialize variable Translated Description
+															</th>
+															<th>
+																Initialize variable Translated Category Tag
+															</th>
+															<th>
+																Initialize variable AI Builder Language
+															</th>
+															<th>
+																Initialize variable AI Builder Language Confidence Score
+															</th>
+															<th>
+																Initialize variable Case Description Translated
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																Name
+															</td>
+															<td>
+																target _language
+															</td>
+															<td>
+																translated _description
+															</td>
+															<td>
+																translated _category_tag
+															</td>
+															<td>
+																ai_builder _language
+															</td>
+															<td>
+																ai_builder _language _confidence _score
+															</td>
+															<td>
+																case _description _translated
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Type
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																String
+															</td>
+															<td>
+																Float
+															</td>
+															<td>
+																String
+															</td>
+														</tr>
+														<tr>
+															<td>
+																Value
+															</td>
+															<td>
+																en
+															</td>
+															<td>
+																none
+															</td>
+															<td>
+																none
+															</td>
+															<td>
+																en
+															</td>
+															<td>
+																0
+															</td>
+															<td>
+																none
+															</td>
+														</tr>
+
+													</tbody>
+												</table>
+												<p>See results</p>
+
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_02.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add the following additional variables steps.</span>
+														</span>
+													</span>
+												</span>
+
+												<p></p>
+
+												<li>Add a Flow Scope step and name it “Check user input”</li>
+												<li>Add a Condition step to check if user input is a valid supported target language code. </li>
+												<li>Add in “If yes” a new Flow step Set variable and name it “Set variable Target Language to User Input”. Set Name equal target_language and Value equal User Input target_language.</li>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_04.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add in “If yes” a new Flow step Set variable and name it “Set variable Target Language to User Input”. Set Name equal target_language and Value equal User Input target_language.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												
+												<li>Add a Flow Scope step and name it “Get list of cases”</li>
+												<li>Add a Dataverse List rows action and name it “List cases”</li>
+												<li>Select Table name “Cases”</li>
+												<li>Add Fetch Xml Query to get only active cases with category tags. See below sample</li>
+
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/CodeFetchXML.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add Fetch Xml Query to get only active cases with category tags.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+
+												<li>Add a Flow Scope step and name it “Translate content to target language”</li>
+												<li>Add a AI Builder Step “Detect the language being used in text” and name it “Detect the language being used in case description”</li>
+												<li>Add a Flow Step “Set variable” and name it “Set variable AI Builder Language”. Choose the “ai_builder_language” variable for Name and for Value “Language” result from the AI Builder.</li>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_07.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add a Flow Step “Set variable” and name it “Set variable AI Builder Language”. Choose the “ai_builder_language” variable for Name and for Value “Language” result from the AI Builder.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												
+												<li>Add a Condition step to evaluate the detected language confidence score is a valid result between 0 and 1.</li>
+												<li>Add in “If yes” a new Flow step Set variable and name it “Set variable AI Builder Language Confidence Score”</li>
+												<li>For Name choose the variable “ai_builder_language_confidence_score” and for Value add the AI Builder Confidence Score result.</li>
+												<li>Add in “If no” a new Flow step Set variable and name it “Set variable AI Builder Language Confidence Score”</li>
+												<li>For Name choose the variable “ai_builder_language_confidence_score” and for Value add 0.</li>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_08.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add a Flow Step “Set variable” and name it “Set variable AI Builder Language”. Choose the “ai_builder_language” variable for Name and for Value “Language” result from the AI Builder.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												<li>Add a Condition step to evaluate the detected language is a valid result en, fr, de</li>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_09.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add a Condition step to evaluate the detected language is a valid result en, fr, de</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												<li>Add in “If yes” a new Flow step switch to evaluate the supported target language model. Set On equal to target_language variable</li>
+												<li>Add a Switch cases for English language and name it “Language equal english”</li>
+												<li>Set Equals to en</li>
+												<li>Add a AI Builder Step “Translate text into another language” and name it “Translate description to english”. </li>
+												<li>Set Text to Case Description and Translate to English</li>
+												<li>Add a Flow Step “Set variable” and name it “Set variable Translated Description for english”. Choose the “translated_description” variable for Name and for Value “Translated text” result from the AI Builder.</li>
+												<li>Add a AI Builder Step “Translate text into another language” and name it “Translate category tag to english”. </li>
+												<li>Set Text to Case Category Tags and Translate to English</li>
+												<li>Add a Flow Step “Set variable” and name it “Set variable Translated Category Tag for english”. Choose the “translated_category_tag” variable for Name and for Value “Translated text” result from the AI Builder. See result</li>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_11.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Add a Flow Step “Set variable” and name it “Set variable Translated Category Tag for english”. Choose the “translated_category_tag” variable for Name and for Value “Translated text” result from the AI Builder.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												
+												<li>To support other languages too, <strong>repeat the steps 21 to 28 for French and German.</strong> </li>
+												<li>Close the switch action</li>
+												<li>Add a Dataverse Step “Update a row” and name it “Update current case”</li>
+												<li>Set Table name equal “Cases”, Row ID equal “Case”, Category Tags Translated to translated_category_tag variable and Description Translated to translated_description.</li>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_13.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Set Table name equal “Cases”, Row ID equal “Case”, Category Tags Translated to translated_category_tag variable and Description Translated to translated_description.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												<p></p>
+												<span
+													class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/CaseManagement/TranslateCasesToTargetLanguage_14.png" class="img-fluid"
+															alt="High-level functional process overview with domain options">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Case Management</span>
+															<span class="thumb-info-type opacity-6">Set Table name equal “Cases”, Row ID equal “Case”, Category Tags Translated to translated_category_tag variable and Description Translated to translated_description.</span>
+														</span>
+													</span>
+												</span>
+												<p></p>
+												<li>Select “Save” to persist all changes you made to the flow.</li>
+												<li>Select “Test” to test your flow with User Input with a supported language code.</li>
+											</ol>
+
+											<p>Now we’ve helper flow to simple translate the Case description into any target language. We will use this helper flow to prepare the sample data for the AI Builder models for category classifications.</p>
 
 											<p></p>
 
@@ -237,12 +553,7 @@
 											<!-- Container - Article footer -->
 											<hr class="solid my-5">
 											<p>5. Jan 2023</p>
-		
-											<h4 class="mb-3">References</h4>
-											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
-													href="https://learn.microsoft.com/en-us/ai-builder/prebuilt-language-detection" target="_blank"> Language
-													detection prebuilt AI model - AI Builder | Microsoft Learn</a></li>
-														
+			
 											<!-- Container - Article author -->
 											<div class="post-block mt-4 pt-2 post-author">
 												<h4 class="mb-3">Author</h4>
