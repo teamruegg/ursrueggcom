@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- Basic -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>PowerApps canvas app coding standards and guidelines</title>
+
+	<meta name="keywords" content="Urs Rüegg | PowerApps canvas app coding standards and guidelines" />
+	<meta name="description"
+		content="This article is aimed at Microsoft PowerApps makers in the enterprise. It contains standards for naming objects, collections, and variables, and guidelines for developing consistent, performant, and easily maintainable apps.">
+	<meta name="copyright" content="© Copyright 2022 by Urs Rüegg. All Rights Reserved." />
+	<meta name="author" content="Urs Rüegg">
+	<meta name="contact" content="urs.ruegg@microsoft.com">
+	<meta name="thumbnail" content="https://www.ursruegg.com/img//digital/PowerAppsCanvasAppCodingStandardsAndGuidelines/PowerAppsCanvasAppCodingStandardsAndGuidelines_550.png" />
+	<meta name="og:title" property="og:title" content="PowerApps canvas app coding standards and guidelines">
+	<meta name="twitter:card" content="PowerApps canvas app coding standards and guidelines">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://www.ursruegg.com/">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+	<!-- Web Fonts  -->
+	<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap"
+		rel="stylesheet" type="text/css">
+
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
+	<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="../css/theme.css">
+	<link rel="stylesheet" href="../css/theme-elements.css">
+	<link rel="stylesheet" href="../css/theme-blog.css">
+	<link rel="stylesheet" href="../css/theme-shop.css">
+
+	<!-- Revolution Slider CSS -->
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
+	<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../css/ursruegg.css">
+
+	<!-- Skin CSS -->
+	<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
+
+	<!-- Theme Custom CSS -->
+	<link rel="stylesheet" href="../css/custom.css">
+
+	<!-- Head Libs -->
+	<script src="../vendor/modernizr/modernizr.min.js"></script>
+</head>
+
+<body data-plugin-page-transition>
+
+	<div class="body">
+		<!-- Header -->
+		<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
+			data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+			<div class="header-body bg-color-dark box-shadow-none">
+				<div class="header-container header-container-height-sm container">
+					<div class="header-row">
+						<div class="header-column">
+							<div class="header-row">
+								<div class="header-logo">
+									<a href="../index.html">
+										<img alt="ursruegg | Website" width="40" height="40"
+											src="../img/logos/ursruegg_icon_180x180.png">
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- Navigation -->
+						<div class="header-column justify-content-end me-lg-4">
+							<div class="header-row">
+								<div
+									class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
+									<div
+										class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+										<nav class="collapse">
+											<ul class="nav nav-pills" id="mainNav">
+												<li>
+													<a class="nav-link" href="../index.html">
+														Home
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="../blog.html">
+														Blog
+													</a>
+												</li>
+												<li>
+													<a class="nav-link" href="../search.html">
+														Search
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+									<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
+										href="../aboutme.html">About Me</a>
+									<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+										data-bs-target=".header-nav-main nav">
+										<i class="fas fa-bars"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div role="main" class="main">
+
+			<!-- Container 1 - Intro -->
+			<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
+				<div class="container">
+					<div class="col-md-12 align-self-center order-1">
+						<ul class="breadcrumb d-block text-center">
+							<li><a href="../index.html">Home</a></li>
+							<li><a href="../blog.html">Blog</a></li>
+							<li class="active">PowerApps canvas app coding standards and guidelines</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Container 2 - Section -->
+			<section class="section section-light section-no-border m-0">
+				<div class="container py-4">
+
+					<div class="row">
+						<div class="col">
+							<div class="blog-posts single-post">
+
+								<!-- Container - Article  header-->
+								<article class="post post-large blog-single-post border-0 m-0 p-0">
+									<div class="post-image">
+										<img src="../img/digital/PowerAppsCanvasAppCodingStandardsAndGuidelines/PowerAppsCanvasAppCodingStandardsAndGuidelines.png"
+											class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+									</div>
+									<p></p>
+
+									<div class="post-date ms-0">
+										<span class="day">15</span>
+										<span class="month">Jan</span>
+									</div>
+
+									<div class="post-content ms-0">
+
+										<h2 class="font-weight-semi-bold"><a
+												href="../blog/blog-post-template.html">PowerApps canvas app coding
+												standards and guidelines</a></h2>
+
+										<div class="post-meta">
+											<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+											<span><i class="far fa-folder"></i>
+												<a href="#">Digital</a>,
+												<a href="#">Development</a>,
+												<a href="#">Dynamics</a>,
+												<a href="#">Power Platform</a>
+											</span>
+										</div>
+
+										<!-- Container - Article content -->
+
+										<h4>PowerApps canvas app coding standards and guidelines</h4>
+
+										<p>This article is aimed at Microsoft PowerApps makers in the enterprise. It
+											contains standards for naming objects, collections, and variables, and
+											guidelines for developing consistent, performant, and easily maintainable
+											apps.</p>
+
+										<h4>Introduction</h4>
+
+										<p>Microsoft PowerApps is a high-productivity application development platform
+											from Microsoft. Microsoft uses this platform to build first-party
+											applications in Dynamics 365 for Sales, Dynamics 365 for Service, Dynamics
+											365 for Field Service, Dynamics 365 for Marketing, and Dynamics 365 for
+											Talent. Enterprise customers can also use the same platform to build their
+											own custom line-of-business applications. Individual users and teams within
+											your organization can also build personal or team productivity applications
+											without having to write very much code (or any).</p>
+
+										<h4>Purpose of this article</h4>
+
+										<p>This white paper is targeted at the enterprise application maker (developer)
+											who is responsible for designing, building, testing, deploying, and
+											maintaining PowerApps apps in a corporate or government environment. This
+											white paper was developed as a collaboration between the Microsoft PowerApps
+											team, Microsoft IT, and industry professionals. Of course, enterprise
+											customers are free to develop their own standards and practices. However, we
+											feel that adherence to these guidelines will help developers in these areas:
+										</p>
+
+										<ul>
+											<li>Simplicity</li>
+											<li>Readability</li>
+											<li>Supportability</li>
+											<li>Ease of deployment and administration</li>
+											<li>Performance</li>
+											<li>Accessibility</li>
+										</ul>
+
+										<p>This article is intended to be a living document. As Microsoft Power platform
+											capabilities and industry standards change, so will this white paper.</p>
+
+										<h4>General naming conventions</h4>
+
+										<p>This section describes “camel case” and “Pascal case” naming conventions. If
+											you’re already familiar with those terms, you can skip ahead.</p>
+
+										<h5>Camel case</h5>
+
+										<p>You should use camel case for controls and variables. Camel case begins with
+											a lowercase prefix, removes all spaces from object or variable names, and
+											capitalizes the first letter of each word after the first. For example, a
+											text input control might be named txtUserEmailAddress.</p>
+										
+										<i class="fab fa-github text-2"></i> <a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank">Camel case -
+											Wikipedia
+										</a>
+									
+										
+										<p></p>
+
+										<h5>Pascal case</h5>
+
+										<p>You should use Pascal case for data sources. Pascal case is sometimes
+											referred to as “upper camel case.” Like camel case, it removes all spaces
+											and capitalizes the first letter of words. However, unlike camel case,
+											Pascal case also capitalizes the first word. For example, a common data
+											source in PowerApps is the Microsoft Office 365 Users connector, which is
+											named Office365Users in your code.</p>
+
+										<h4>Object naming conventions</h4>
+
+										<p>As you create objects in your PowerApps apps, it’s important to use
+											consistent naming conventions for screens, controls, and data sources. This
+											approach will make your apps easier to maintain, can help improve
+											accessibility, and will make your code easier to read as those objects are
+											referenced.</p>
+
+										<p>This is OK! The object naming conventions in this white paper are intended as
+											guidelines, and organizations are free to develop their own standards. The
+											main point is to be consistent.</p>
+
+										<h5>Screen names</h5>
+
+										<p>Screen names should reflect the purpose of the screen, so that it’s easier to
+											navigate through complex apps in PowerApps Studio.</p>
+
+										<p>What’s less obvious is that screen names are read aloud by screen readers,
+											which are needed for users who have vision accessibility needs. Therefore,
+											it’s imperative that you use plain language to name your screens, and that
+											the names include spaces and no abbreviations. Also, we recommend that you
+											end the name with the word “Screen,” so that the context is understood when
+											the name is announced.</p>
+
+										<p>Here are some good examples:</p>
+
+										<ul>
+											<li>HomeScreen</li>
+											<li>AppHelpScreen</li>
+										</ul>
+
+										<p>Here are some bad examples:</p>
+
+										<ul>
+											<li>Home</li>
+											<li>EmpProfDetails</li>
+											<li>AppHelp</li>
+										</ul>
+
+										<h5>Control names</h5>
+
+										<p>All control names on the canvas should use camel case. They should begin with
+											a three-character type descriptor, followed by the purpose of the control.
+											This approach helps identify the type of control and makes it easier to
+											build formulas and search.</p>
+
+										<p>Here’s a good example:</p>
+
+										<ul>
+											<li>lblUserName</li>
+										</ul>
+
+										<p>The following table shows the abbreviations for common controls</p>
+
+
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>Control name</th>
+													<th>Abbreviation</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Address Input</td>
+													<td>adr</td>
+												</tr>
+												<tr>
+													<td>Audio</td>
+													<td>aud</td>
+												</tr>
+												<tr>
+													<td>Barcode Scanner</td>
+													<td>bar</td>
+												</tr>
+												<tr>
+													<td>Button</td>
+													<td>btn</td>
+												</tr>
+												<tr>
+													<td>Camera control</td>
+													<td>cam</td>
+												</tr>
+												<tr>
+													<td>Canvas</td>
+													<td>can</td>
+												</tr>
+												<tr>
+													<td>Card</td>
+													<td>crd</td>
+												</tr>
+												<tr>
+													<td>Charts</td>
+													<td>chr</td>
+												</tr>
+												<tr>
+													<td>Check Box</td>
+													<td>chk</td>
+												</tr>
+												<tr>
+													<td>Collection</td>
+													<td>col</td>
+												</tr>
+												<tr>
+													<td>Container</td>
+													<td>con</td>
+												</tr>
+												<tr>
+													<td>Combo box</td>
+													<td>cmb</td>
+												</tr>
+												<tr>
+													<td>Date Picker</td>
+													<td>dte</td>
+												</tr>
+												<tr>
+													<td>Drop down</td>
+													<td>drp</td>
+												</tr>
+												<tr>
+													<td>Form</td>
+													<td>frm</td>
+												</tr>
+												<tr>
+													<td>Gallery</td>
+													<td>gal</td>
+												</tr>
+												<tr>
+													<td>Group</td>
+													<td>grp</td>
+												</tr>
+												<tr>
+													<td>Header page shape</td>
+													<td>hdr</td>
+												</tr>
+												<tr>
+													<td>Html text</td>
+													<td>htm</td>
+												</tr>
+												<tr>
+													<td>Icon</td>
+													<td>ico</td>
+												</tr>
+												<tr>
+													<td>Image</td>
+													<td>img</td>
+												</tr>
+												<tr>
+													<td>Label</td>
+													<td>lbl</td>
+												</tr>
+												<tr>
+													<td>List Box</td>
+													<td>lst</td>
+												</tr>
+												<tr>
+													<td>Map</td>
+													<td>map</td>
+												</tr>
+												<tr>
+													<td>Microphone</td>
+													<td>mic</td>
+												</tr>
+												<tr>
+													<td>Microsoft Stream</td>
+													<td>str</td>
+												</tr>
+												<tr>
+													<td>Page section shape</td>
+													<td>sec</td>
+												</tr>
+												<tr>
+													<td>PDF Viewer</td>
+													<td>pdf</td>
+												</tr>
+												<tr>
+													<td>Pen Input</td>
+													<td>pen</td>
+												</tr>
+												<tr>
+													<td>Picture</td>
+													<td>pic</td>
+												</tr>
+												<tr>
+													<td>Radio button</td>
+													<td>rad</td>
+												</tr>
+												<tr>
+													<td>Rating</td>
+													<td>rtg</td>
+												</tr>
+												<tr>
+													<td>Rich Text Editor</td>
+													<td>rte</td>
+												</tr>
+												<tr>
+													<td>Shapes (rectangle, circle, and so on)</td>
+													<td>shp</td>
+												</tr>
+												<tr>
+													<td>Slider</td>
+													<td>sld</td>
+												</tr>
+												<tr>
+													<td>Table data</td>
+													<td>tbl</td>
+												</tr>
+												<tr>
+													<td>Text input</td>
+													<td>txt</td>
+												</tr>
+												<tr>
+													<td>Timer</td>
+													<td>tmr</td>
+												</tr>
+												<tr>
+													<td>Toggle</td>
+													<td>tgl</td>
+												</tr>
+												<tr>
+													<td>Video</td>
+													<td>vid</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+										<p>Control names must be unique across an application. If a control is reused on
+											multiple screens, the short screen name should be suffixed at the end – for
+											example, galBottomNavMenuHS, where “HS” stands for “Home Screen.” This
+											approach makes it easier to reference the control in formulas across
+											screens.</p>
+
+										<h5>Data source names</h5>
+
+										<p>When you add a data source to your application, the name can’t be changed in
+											the PowerApps app. The name is inherited from the source connector or data
+											entities that are derived from the connection.</p>
+
+										<p>Here are some examples:</p>
+
+										<ul>
+											<li>Name inherited from the source connector: The Office 365 Users connector
+												is named Office365Users in your code.</li>
+											<li>Data entities derived from the connection: A Microsoft SharePoint list
+												that’s named Employees is returned from the SharePoint connector.
+												Therefore, the name of the data source in your code is Employees. The
+												same PowerApps app can also use the same SharePoint connector to access
+												a SharePoint list that’s named Contractors. In this case, the name of
+												the data source in the code is Contractors.</li>
+										</ul>
+
+										<h5>Standard action connectors</h5>
+
+										<p>In Standard action connectors that expose functions, such as LinkedIn, you’ll
+											see that the data source name and its operations use Pascal casing (that is,
+											UpperUpperUpper). For example, the LinkedIn data source is named LinkedIn
+											and has an operation named ListCompanies.</p>
+
+										<h5>Custom connectors</h5>
+
+										<p>Custom connectors can be created by any maker in your environment. They’re
+											used to connect to custom application programming interfaces (APIs) such as
+											third-party services or line-of-business APIs that your IT department has
+											created. Pascal casing is also recommended for the data source name and its
+											operations. Just be aware that the custom connector name and the way that it
+											appears in PowerApps can differ.</p>
+										<p>For example, here’s a custom connector named MS Auction Item Bid API.</p>
+
+										<h4>Code naming conventions</h4>
+
+										<p>As you add code to your PowerApps apps, it becomes increasingly important to
+											use consistent naming conventions for variables and collections. If
+											variables are named correctly, you should be able to quickly discern the
+											type, purpose, and scope of each.</p>
+										<p>We found lots of variance in the code naming and object naming conventions of
+											different organizations. For example, one team uses data type prefixes for
+											its variables (such as strUserName to indicate a string), whereas another
+											team prefixes all its variables with an underscore (_) to group them in
+											IntelliSense. There are also differences in the way that teams denote global
+											variables versus context variables.</p>
+										<p>The same guidance applies here: Have a pattern for your team, and be
+											consistent in its usage.</p>
+
+										<h5>Variable names</h5>
+
+										<ul>
+											<li>Be descriptive of the variable’s function. Think about what the variable
+												is bound to and how it’s used, and then name it accordingly.</li>
+											<li>Prefix your global and context variables differently.</li>
+										</ul>
+
+										<p>Be smart! PowerApps lets context variables and global variables share the
+											same names. This can cause confusion, because, by default, your formulas use
+											context variables unless the disambiguation operator is used. Avoid this
+											situation by following these conventions:</p>
+
+										<ul>
+											<li>Prefix context variables with <strong>loc</strong>.</li>
+											<li>Prefix global variables with <strong>gbl</strong>.</li>
+											<li>The name after the prefix should indicate the intent/purpose of the
+												variable. Multiple words can be used and don’t have to be separated by
+												any special characters (for example, spaces or underscores), provided
+												that the first letter of each word is capitalized.</li>
+											<li>Use Camel casing. Begin your variable names with a prefix in lowercase
+												letters, and then capitalize the first letter of each word in the name
+												(that is, lowerUppperUpper).</li>
+										</ul>
+
+										<p>Here are some good examples:</p>
+
+										<ul>
+											<li>Global variable: gblFocusedBorderColor</li>
+											<li>Context variable: locSuccessMessage</li>
+										</ul>
+
+										<h5>Collection names</h5>
+
+										<ul>
+											<li>Be descriptive of the collection’s contents. Think about what the
+												collection contains and/or how it’s used, and then name it accordingly.
+											</li>
+											<li>Collections should be prefixed with <strong>col</strong>.</li>
+											<li>The name after the prefix should indicate the intent or purpose of the
+												collection. Multiple words can be used and don’t have to be separated by
+												spaces or underscores, provided that the first letter of each word is
+												capitalized.</li>
+											<li>Use Camel casing. Begin your collection names with a lowercase col
+												prefix, and then capitalize the first letter of each word in the name
+												(that is, colUpperUpper).</li>
+										</ul>
+
+										<p>Here are some good examples:</p>
+
+										<ul>
+											<li>colMenuItems</li>
+											<li>colMyApps</li>
+										</ul>
+
+										<p>Here are some bad examples:</p>
+
+										<ul>
+											<li>orderscoll</li>
+											<li>tempCollection</li>
+										</ul>
+
+										<h4>Organizing your objects and code</h4>
+
+										<h5>Using groups for organization</h5>
+
+										<p>All controls on a screen should belong to a group, so that you can easily
+											recognize their purpose, move them around a screen or between screens, or
+											collapse them to simplify your view. Gallery, Form, and Canvas controls are
+											already groups, but they can also, optionally, be part of another group to
+											help improve organization.</p>
+
+										<h5>Format text feature</h5>
+
+										<p>As the complexity of a formula increases, readability and maintainability are
+											affected. It can be very difficult to read a large block of code that
+											contains multiline functions. The Format text feature adds line breaks and
+											indentation to make your formula easier to read. As for code comments, the
+											extra white space is removed from the app package that’s downloaded to the
+											client. Therefore, there’s no need to use the Remove formatting feature
+											before you publish your app.</p>
+
+
+										<!-- Container - Article footer -->
+										<hr class="solid my-5">
+										<p>15. Jan 2023</p>
+
+										<h4 class="mb-3">References</h4>
+										<li><i class="fab fa-github text-2"></i> <a
+												href="https://powerapps.microsoft.com/en-us/blog/powerapps-canvas-app-coding-standards-and-guidelines/"
+												target="_blank">PowerApps Canvas App Coding Standards and Guidelines
+												Whitepaper
+											</a></li>
+
+
+										<!-- Container - Article author -->
+										<div class="post-block mt-4 pt-2 post-author">
+											<h4 class="mb-3">Author</h4>
+											<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+												<a href="../aboutme.html">
+													<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+												</a>
+											</div>
+											<p><strong class="name"><a href="../aboutme.html"
+														class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
+											</p>
+											<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+										</div>
+
+
+									</div>
+								</article>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Dynamics 365 Marketing website analytics -->
+		<div id="dwo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"></div>
+		<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
+		<div class="d365-mkt-config" style="display:none" data-website-id="wo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"
+			data-hostname="bb84a5e7a68443feb00441dba87befd0.svc.dynamics.com"></div>
+
+		<!-- Footer -->
+		<footer id="footer" class="bg-color-quaternary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
+							<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
+										class="fab fa-linkedin-in text-2"></i></a></li>
+							<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
+										class="fab fa-github text-2"></i></a></li>
+							<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
+										class="fab fa-twitter text-2"></i></a></li>
+						</ul>
+						<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Vendor -->
+	<script src="../vendor/plugins/js/plugins.min.js"></script>
+	<script src="../vendor/instafeed/instafeed.min.js"></script>
+
+	<!-- Theme Base, Components and Settings -->
+	<script src="../js/theme.js"></script>
+
+	<!-- Revolution Slider Scripts -->
+	<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<!-- Current Page Vendor and Views -->
+	<script src="../js/views/view.contact.js"></script>
+
+	<!-- Demo -->
+	<script src="../js/demos/demo-gym.js"></script>
+
+	<!-- Theme Custom -->
+	<script src="../js/custom.js"></script>
+
+	<!-- Theme Initialization Files -->
+	<script src="../js/theme.init.js"></script>
+
+</body>
+
+</html>
