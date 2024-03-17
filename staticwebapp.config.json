@@ -1,0 +1,11 @@
+{
+    "routes": [
+      {
+        "route": "/",
+        "redirect": {
+          "statusCode": 301,
+          "url": "https://www.ursruegg.com"
+        }
+      }
+    ]
+  }
