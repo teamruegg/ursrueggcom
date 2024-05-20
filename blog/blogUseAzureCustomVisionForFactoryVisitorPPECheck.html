@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>Use Azure Custom Vision for Factory Visitor PPE check</title>	
+
+		<meta name="keywords" content="Urs Rüegg | Use Azure Custom Vision for Factory Visitor PPE check" />
+		<meta name="description" content="Use AI Vision to check if visitors are wearing the required personal protective equipment (PPE) before they are entering the factory ">
+		<meta name="copyright" content="© Copyright 2024 by Urs Rüegg. All Rights Reserved." />
+		<meta name="author" content="Urs Rüegg">
+		<meta name="contact" content="urs.ruegg@microsoft.com">
+		<meta name="thumbnail" content="https://www.ursruegg.com/img/home/team_intro7_bw.jpg" />
+		<meta name="og:title" property="og:title" content="Use AI Vision to check if visitors are wearing the required personal protective equipment (PPE) before they are entering the factory ">
+		<meta name="twitter:card" content="Use AI Vision to check if visitors are wearing the required personal protective equipment (PPE) before they are entering the factory ">
+		<meta name="robots" content="index, follow">
+		<link rel="canonical" href="https://www.ursruegg.com/">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../vendor/fontawesome-free/css/all.min.css">
+		<link rel="stylesheet" href="../vendor/animate/animate.compat.css">
+		<link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.min.css">
+		<link rel="stylesheet" href="../vendor/magnific-popup/magnific-popup.min.css">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="../css/theme.css">
+		<link rel="stylesheet" href="../css/theme-elements.css">
+		<link rel="stylesheet" href="../css/theme-blog.css">
+		<link rel="stylesheet" href="../css/theme-shop.css">
+
+		<!-- Revolution Slider CSS -->
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/settings.css">
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/layers.css">
+		<link rel="stylesheet" href="../vendor/rs-plugin/css/navigation.css">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="../css/ursruegg.css">
+
+		<!-- Skin CSS -->
+		<link id="skinCSS" rel="stylesheet" href="../css/skin-ursruegg.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="../css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="../vendor/modernizr/modernizr.min.js"></script>
+	</head>
+	<body data-plugin-page-transition>
+
+		<div class="body">
+			<!-- Header -->
+			<header id="header" class="header-floating-bar header-floating-bar-static-sticky"
+				data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'reveal', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 0, 'stickySetTop': '0px', 'stickyChangeLogo': false}">
+				<div class="header-body bg-color-dark box-shadow-none">
+					<div class="header-container header-container-height-sm container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<a href="../index.html">
+											<img alt="ursruegg | Website" width="40" height="40"
+												src="../img/logos/ursruegg_icon_180x180.png">
+										</a>
+									</div>
+								</div>
+							</div>
+							<!-- Navigation -->
+							<div class="header-column justify-content-end me-lg-4">
+								<div class="header-row">
+									<div
+										class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-force-light-text header-nav-force-light-text-active-skin-color order-2 order-lg-1">
+										<div
+											class="header-nav-main header-nav-main-mobile-dark header-nav-main-dropdown-no-borders header-nav-main-clone-items header-nav-main-slide header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li>
+														<a class="nav-link" href="../index.html">
+															Home
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="../blog.html">
+															Blog
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="../search.html">
+															Search
+														</a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+										<a class="btn btn-primary btn-join-now text-uppercase custom-font-weight-medium d-none d-lg-flex"
+											href="../aboutme.html">About Me</a>
+										<button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
+											data-bs-target=".header-nav-main nav">
+											<i class="fas fa-bars"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		
+			<!-- Main -->
+			<div role="main" class="main">
+		
+				<!-- Container 1 - Intro -->
+				<section class="section section-no-border section-tertiary custom-padding-top-1 mb-0">
+					<div class="container">
+						<div class="col-md-12 align-self-center order-1">
+							<ul class="breadcrumb d-block text-center">
+								<li><a href="../index.html">Home</a></li>
+								<li><a href="../blog.html">Blog</a></li>
+								<li class="active">Use Azure Custom Vision for Factory Visitor PPE check</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+		
+				<!-- Container 2 - Section -->
+				<section class="section section-light section-no-border m-0">
+					<div class="container py-4">
+		
+						<div class="row">
+							<div class="col">
+								<div class="blog-posts single-post">
+		
+									<!-- Container - Article  header-->
+									<article class="post post-large blog-single-post border-0 m-0 p-0">
+										<div class="post-image">
+											<img src="../img/digital/VisitorManagement/SwissSmartFactoryVisitorSelfRegistrationAppScreen06SafeWorkResult.PNG" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
+										</div>
+										<p></p>
+		
+										<div class="post-date ms-0">
+											<span class="day">20</span>
+											<span class="month">May</span>
+										</div>
+		
+										<div class="post-content ms-0">
+		
+											<h2 class="font-weight-semi-bold"><a href="../blog/blogUseAzureCustomVisionForFactoryVisitorPPECheck.html">Use Azure Custom Vision for Factory Visitor PPE check</a></h2>
+		
+											<div class="post-meta">
+												<span><i class="far fa-user"></i> By <a href="#">Urs Rüegg</a> </span>
+												<span><i class="far fa-folder"></i>
+													<a href="#">Digital</a>,
+													<a href="#">Development</a>,
+													<a href="#">Smart Factory</a>,
+													<a href="#">AI</a>,
+													<a href="#">Azure</a>,
+													<a href="#">Power Platform</a>
+												</span>
+											</div>
+		
+											<!-- Container - Article content -->
+		
+											<h4>Use Azure Custom Vision for Factory Visitor PPE check</h4>
+		
+											<p>This tutorial will guide you through the steps of setting up a visitor management system that uses Azure Custom Vision service to check if visitors are wearing the required personal protective equipment (PPE) in a factory environment. You will learn how to:</p>
+											<ul>
+												<li>Create a Custom Vision project and train it with images of people wearing or not wearing yellow hard hats.</li>
+												<li>Deploy the model and use it within Power Apps based Visitor Check In app to capture visitors’ photos during the check in process.</li>
+											</ul>
+									
+		
+											<span
+												class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/VisitorManagement/SwissSmartFactoryVisitorManagementApps.png"
+														class="img-fluid" alt="Welcome Desk and Visitor Management apps">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Visitor Management</span>
+														<span class="thumb-info-type opacity-6">The Visitor Management is a
+															collection of four Power Apps to
+															manage smart factory visitors.</span>
+													</span>
+												</span>
+											</span>
+		
+											<h4>What you will do</h4>
+											<ul>
+												<li>Build a vision AI model with Azure Custom Vision service that detects if a person is wearing a yellow hard hat for workplace safety applications.</li>
+												<li>Build a Power Apps Canvas app to capture visitor photo and check PPE helm equipped use the Azure Custom Vision.</li>
+											</ul>
+											
+											<h4>What you will need</h4>
+											<ul>
+												<li>Active Azure account (Create a free account here)</li>
+												<li>Power Platform environment (Create and manage environments in the Power Platform admin center).</li>
+												<li>To use the Custom Vision service, you will need to create Custom Vision Training and Prediction resources. This is done when creating a new project in customvision.ai. In case there are issues in setting up a new project, please try creating the resource manually in Azure portal.</li>
+												<li>Yellow hard hat to test the model.</li>
+											</ul>
+
+											<h4>Create a vision AI model with Azure Custom Vision service</h4>
+
+											<p>In this tutorial, you will build a vision AI model for a workplace safety scenario that detects if a person is wearing a hard hat or not. Don’t you have a yellow hard hat to be able to test the functionality after you are done? You can also take pictures and use your own data to build the Vision AI model. Take 30+ pictures for a selected object from different angles and distances instead of using the pictures for hard hat model. You can also use the camera to take pictures (you’ll need to install Python and GitHub).</p>
+
+											<h5>Create a vision AI model with Azure Custom Vision service</h5>
+											<p>There are two ways to train your model - image classification and object detection.</p>
+											<ul>
+												<li><strong>Image classification:</strong> Analyzes the whole frame as a picture and doesn’t draw bounding boxes. Can only identify one object per frame. Easy to train.</li>
+												<li><strong>Object detection:</strong> Can identify multiple objects per image and draw bounding boxes around them. It takes a little bit more time to train as the training requires identifying the object per uploaded image. If you choose to use the object detection model with hard hat data, remember to include both the wearer’s head and hard hat as the object when applicable (not only the hat).</li>
+											</ul>
+
+											<h4>Steps</h4>
+											<ol>
+												<li>Create new Azure Custom Vision resources.</li>
+												<li>Setup a new Azure Custom Vision project.</li>
+												<li>Create new connection for your Power Apps environment.</li>
+												<li>Create Power Apps to test the custom vision model.</li>
+											</ol>
+
+											<h4>Step by step</h4>
+											<p>Now let’s do that step by step.</p>
+
+											<h4>Step 1 - Create new Azure Custom Vision resources</h4>
+
+											<ol>
+												<li>Login to the Azure Portal at https://portal.azure.com.</li>
+												<li>Create a resource by clicking «<strong>+ Create a resource</strong>».</li>
+												<li>Type «<strong>Custom Vision</strong>» into the marketplace search area.</li>
+												<li>Select «<strong>Custom Vision</strong>» resource and create a resource.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/AzureCustomVision_01_Create.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Create Microsoft Azure Custom Vision resource</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Within the «<strong>Basic</strong>» service configuration select:</li>
+
+												<li>Select «<strong>Review + create</strong>».</li>
+												<li>Review the configuration and select «<strong>Create</strong>» to start the deployment process.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/AzureCustomVision_04_ReviewCreate.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Review and create the Microsoft Azure Custom Vision resource</span>
+														</span>
+													</span>
+												</span>
+
+												<li>After the deployment process is successfully finished, two new resources are created</li>
+												
+											</ol>
+
+											<p>Now we have prepared the foundation to create a Custom Vision project to train our own model.</p>
+
+											<h4>Step 2 - Setup a new Azure Custom Vision project</h4>
+											<ol>
+												<li>Login to the Azure Custom Vision Service at https://www.customvision.ai.</li>
+												
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_01_Login.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Login to the Azure Custom Vision Service at https://www.customvision.ai.</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Within Custom Vision portal select «<strong>New project</strong>».</li>
+												<li>Create new project as follows:</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_02_CreateNewProject.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Create new project.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>After the new project is successfully created, you can start to train the model using sample photos.</li>
+												<li>Download the training images here - TrainingData.zip.</li>
+												<li>Uncompress the zip file to a local directory.</li>
+												<li>Upload images to Custom Vision in batches. For the image classification model, use one batch per tag (images containing HardHat in the name, then NoHardHat), adding the appropriate tag during each upload.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_05_AddImagesHardHat.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Upload images to Custom Vision in batches. For the image classification model, use one batch per tag.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>After uploaded the two batches of images, select «<strong>Train</strong>» and in the dialog choose «<strong>Quick Training</strong>». Start the training by selecting «<strong>Train</strong>».</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_07_TrainTheModel.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">After uploaded the two batches of images, start quick training.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>Now starts the training iteration «<strong>Iteration 1</strong>».</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_08_ModelTraining.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Now starts the training iteration.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>After the training is successfully finished, review the model performance.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_09_ModelTrainingSuccess.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">After the training is successfully finished, review the model performance.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>Select «<strong>Publish</strong>» to publish the trained model. In the dialog choose your customvision-Prediction resource. Start publishing by selecting «<strong>Publish</strong>».</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_10_PublishTrainedModel.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Publish the trained model.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>Test your published model by selecting «<strong>Quick Test</strong>» and upload a Sample Image.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/CustomVision_11_QuickTest.png"
+															class="img-fluid" alt="Microsoft Azure Custom Vision">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Azure Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Test your published model by selecting «Quick Test» and upload a Sample Image.</span>
+														</span>
+													</span>
+												</span>
+												
+											</ol>
+
+											<p>Now we have a trained and published Custom Vision model to be used either in any Application like Power Apps, Power Automation or even at the Edge deployed on a Vision AI DevKit camera hardware.</p>
+
+											<h4>Step 3 - Create new connection for your Power Apps environment</h4>
+											<ol>
+												<li>Login to the Power Apps maker portal at https://make.powerapps.com.</li>
+												<li>Select «<strong>Connections</strong>» on the left menu.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerApps_01_CreateConnection.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Select «Connections» on the left menu and create a new connection.</span>
+														</span>
+													</span>
+												</span>
+
+												<li>To create the connection, you need to get the Endpoint and Key of your customvision-Prediction resource. Open the Azure Custom Vision Service at https://www.customvision.ai. Open your project and select the «<strong></strong>Gear» (Settings) Icon to get the project settings. Copy the Key, Endpoint and Project Id.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerApps_02_GetProjectSettingsForConnections.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Custom Vision</span>
+															<span class="thumb-info-type opacity-6">Open your project and select the «Gear» (Settings) Icon to get the project settings. Copy the Key, Endpoint and Project Id.</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Select «<strong>+ New connection</strong>» to create a new connection and add the Prediction Key and Site URL (your endpoint).</li>
+												
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerApps_03_CreateNewCustomVisionConnection.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Select «+ New connection» to create a new connection and add the Prediction Key and Site URL (your endpoint).</span>
+														</span>
+													</span>
+												</span>
+												
+
+												<li>Select «<strong>Create</strong>» button and a new connection reference is created within your environment.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerApps_04_NewCustomVisionConnectionCreated.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Select «Create» button and a new connection reference is created within your environment.</span>
+														</span>
+													</span>
+												</span>
+
+											</ol>
+
+											<p>Now we have prepared the Power Platform environment with a connection reference to your Custom Vision project. You can use this connection reference within your Power Platform eco-system to build Power Apps, Power Automate flows etc.</p>
+
+											<h4>Step 4 - Create a Power Apps to test the custom vision model</h4>
+											<ol>
+												<li>Login to the Power Apps maker portal at https://make.powerapps.com.</li>
+												<li>Select «<strong>+ Create</strong>» and choose «<strong>Blank app</strong>».</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerAppsTestApp_01_CreateBlankApp.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Select «+ Create» and choose «Blank app».</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Select «<strong>Create</strong>» to create Blank canvas app.</li>
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerAppsTestApp_02_CreateBlankCanvasApp.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Select «Create» to create Blank canvas app.</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Add App name and select format=Tablet. Select «<strong>Create</strong>» button.</li>
+												
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerAppsTestApp_03_CanvasAppFromBlank.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Add App name and select format=Tablet. Select «Create» button.</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Select «<strong>Screen1</strong>» and add the following controls to the screen and change the name appropriately.</li>
+												
+
+												•	Camera: camVisitor
+												•	Image: imgVisitor
+												•	Button: btnCheckResult
+												•	Label: lblCheckFirstTag
+												•	Label: lblCheckLastTag
+												•	Label: lblCheckFirstProbability
+												•	Label: lblCheckLastProbability
+
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerAppsTestApp_04_AddControls.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">>Select Screen1 and add the following controls to the screen and change the name appropriately.</span>
+														</span>
+													</span>
+												</span>
+												
+												<li>Select «<strong>Data</strong>» and «<strong>+Add data</strong>» to add new data source. Enter «<strong>Custom Vision</strong>» to select a data source. Choose the «<strong>Custom Vision</strong>» connection and add it.</li>
+												
+												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+													<span class="thumb-info-wrapper">
+														<img src="../img/digital/VisitorManagement/PowerAppsTestApp_05_AddCustomVisionDataSource.png"
+															class="img-fluid" alt="Microsoft Power Apps">
+														<span class="thumb-info-title">
+															<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+															<span class="thumb-info-type opacity-6">Select «Data» and «+Add data» to add new data source.</span>
+														</span>
+													</span>
+												</span>
+																								
+												<li>Now change the properties for the following controls appropriately.</li>
+												
+												<li>Select the imgVisitor control and change Image=camVisitor.Photo</li>
+												
+												<li>Select the lblCheckFirstTag and change Text=First(First(checkSafeWorkingResult).predictions).tagName</li>
+												
+												<li>Select the lblCheckLastTag and change Text=Last(First(checkSafeWorkingResult).predictions).tagName</li>
+													
+												<li>Select the lblCheckFirstProbability and change Test=Text(First(First(checkSafeWorkingResult).predictions).probability, "[$-en-US]0.##")&"%"</li>
+												
+												<li>Select the lblCheckLastProbability and change Test=Text(Last(First(checkSafeWorkingResult).predictions).probability, "[$-en-US]0.##")&"%"</li>
+												
+												<li>Create two global variables for the Custom Vision Project ID and PublishName by select «<strong>Screen1</strong>» and change the OnVisible to</li>
+												<p>Set(varCustomVisionClassifyImageProjectID, “Your Custom Vision Project ID reference”);<br>
+												Set(varCustomVisionClassifyImagePublishName, “Your Custom Vision Publish Name reference”)</p>
+												
+												<li>Select the btnCheckResult control and change OnSelect=</li>
+													<p>
+														// Check visitor photo using Custom Vision AI Model to check if Hard Hat is used<br><br> 
+															ClearCollect(<br>
+															checkSafeWorkingResult,<br>
+															CustomVision.ClassifyImageV2(<br>
+															varCustomVisionClassifyImageProjectID,<br> 
+															varCustomVisionClassifyImagePublishName,<br>
+															imgVisitor.Image<br>
+															)<br>
+														);<br>
+													</p>	
+
+													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+														<span class="thumb-info-wrapper">
+															<img src="../img/digital/VisitorManagement/PowerAppsTestApp_08_btnCheckResultOnSelect.png"
+																class="img-fluid" alt="Microsoft Power Apps">
+															<span class="thumb-info-title">
+																<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+																<span class="thumb-info-type opacity-6">Select the btnCheckResult control and change OnSelect.</span>
+															</span>
+														</span>
+													</span>
+																										
+													<li>Run your app and test capturing an image from the camera stream by click first on the camera to capture the photo and then select the Button to check the photo with the Custom Vision model.</li>
+													
+													<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+														<span class="thumb-info-wrapper">
+															<img src="../img/digital/VisitorManagement/PowerAppsTestApp_09_TestApp.png"
+																class="img-fluid" alt="Microsoft Power Apps">
+															<span class="thumb-info-title">
+																<span class="thumb-info-inner line-height-1">Microsoft Power Apps</span>
+																<span class="thumb-info-type opacity-6">Run your app and test capturing an image from the camera stream by click first on the camera to capture the photo and then select the Button to check the photo with the Custom Vision model.</span>
+															</span>
+														</span>
+													</span>
+									
+											</ol>
+
+											<p>In the test app we used hard coded references for the Project ID and Published Name, Best Practice is to create a solution first and add environment variables to hold the context related variables independent of the environment like Development, Testing and Production. See details how to Use environment variables in Power Platform solutions - Power Apps | Microsoft Learn.</p>
+											<p>Your code for the Screen1 and change OnVisible=<br>
+												// Get Custom Vision Project ID and Published Model Name reference from environment variables<br>
+												Set(varCustomVisionClassifyImageProjectID, LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name' = "ur_customvisionclassifyimageprojectid").Value);<br>
+												Set(varCustomVisionClassifyImagePublishName, LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name' = "ur_customvisionclassifyimagepublishedname").Value);
+											</p>
+
+											<h4>Conclusion</h4>
+
+											<!-- Container - Article footer -->
+											<hr class="solid my-5">
+											<p>20. May 2024</p>
+		
+											<h4 class="mb-3">References</h4>
+											<li><i class="fab fa-github text-2"></i> <a
+													href="https://azure.github.io/Vision-AI-DevKit-Pages/"
+													target="_blank">Vision AI DevKit</a></li>
+											<li><i class="fab fa-github text-2"></i> <a
+													href="https://github.com/teamruegg/VisitorManagement"
+													target="_blank">Visitor Management solution (GitHub)</a>
+											</li>
+											<li><i class="fab fa-github text-2"></i> <a
+												href="https://azure.github.io/Vision-AI-DevKit-Pages/Needed/TrainingData.zip"
+												target="_blank">TrainingData.zip from Vision AI DevKit (GitHub)</a>
+											</li>
+											
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+													href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F"
+													target="_blank">
+													Microsoft Azure free accounts (Docs)</a>
+											</li>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/power-platform/admin/create-environment"
+												target="_blank">
+												Create and manage environments in the Power Platform admin center (Docs)</a>
+											</li>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/power-apps/maker/data-platform/environmentvariables"
+												target="_blank">
+												Use environment variables in Power Platform solutions (Docs)</a>
+											</li>
+		
+											<!-- Container - Article author -->
+											<div class="post-block mt-4 pt-2 post-author">
+												<h4 class="mb-3">Author</h4>
+												<div class="img-thumbnail img-thumbnail-no-borders d-block pb-1">
+													<a href="../aboutme.html">
+														<img src="../img/team/urs_ruegg_2001_private.jpg" alt="">
+													</a>
+												</div>
+												<p><strong class="name"><a href="../aboutme.html"
+															class="text-4 pb-2 pt-2 d-block">Urs Rüegg</a></strong>
+												</p>
+												<p>Solution Architect, Microsoft Technology Center, Zürich</p>
+											</div>
+		
+		
+										</div>
+									</article>
+		
+								</div>
+							</div>
+						</div>
+		
+					</div>
+				</section>
+		
+			</div>
+
+			<!-- Dynamics 365 Marketing website analytics -->
+			<div id="dwo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"></div>
+			<script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
+			<div class="d365-mkt-config" style="display:none" data-website-id="wo_p4drPdhTZMcRx2h9DMGPR9ZsjscetWU-WqYV8-Wc"
+				data-hostname="bb84a5e7a68443feb00441dba87befd0.svc.dynamics.com"></div>
+
+			<!-- Footer -->
+			<footer id="footer" class="bg-color-quaternary">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3">
+								<li><a href="https://www.linkedin.com/in/urs-ruegg/" target="_blank" title="LinkedIn"><i
+											class="fab fa-linkedin-in text-2"></i></a></li>
+								<li><a href="https://github.com/urruegg" target="_blank" title="GitHub"><i
+											class="fab fa-github text-2"></i></a></li>
+								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
+											class="fab fa-twitter text-2"></i></a></li>
+							</ul>
+							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		
+		</div>
+
+		<!-- Vendor -->
+		<script src="../vendor/plugins/js/plugins.min.js"></script>
+		<script src="../vendor/instafeed/instafeed.min.js"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="../js/theme.js"></script>
+
+		<!-- Revolution Slider Scripts -->
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="../vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+		<!-- Current Page Vendor and Views -->
+		<script src="../js/views/view.contact.js"></script>
+
+		<!-- Demo -->
+		<script src="../js/demos/demo-gym.js"></script>
+
+		<!-- Theme Custom -->
+		<script src="../js/custom.js"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="../js/theme.init.js"></script>
+
+	</body>
+</html>
