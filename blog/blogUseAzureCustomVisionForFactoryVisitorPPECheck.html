@@ -293,6 +293,63 @@
 												<li>Within Custom Vision portal select «<strong>New project</strong>».</li>
 												<li>Create new project as follows:</li>
 
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<td>
+																<strong>Topic</strong>
+															</td>
+															<td>
+																<strong>Setting</strong>
+															</td>
+														</tr>
+													</thead>
+		
+													<tbody>
+		
+														<tr>
+															<td>
+																<p>Name:</p>
+															</td>
+															<td>
+																<p>Simulated HardHat Detector</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Description:</p>
+															</td>
+															<td>
+																<p>Detecting Factory Worker PPE equipped with HardHat using tagged photos to train the model.</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Project Types:</p>
+															</td>
+															<td>
+																<p>Classification</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Domains:</p>
+															</td>
+															<td>
+																<p>General (compact)</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Export Capabilities:</p>
+															</td>
+															<td>
+																<p>Vision AI Dev Kit</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+
 												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
 													<span class="thumb-info-wrapper">
 														<img src="../img/digital/VisitorManagement/CustomVision_02_CreateNewProject.png"
@@ -493,14 +550,86 @@
 												
 												<li>Select «<strong>Screen1</strong>» and add the following controls to the screen and change the name appropriately.</li>
 												
-
-												•	Camera: camVisitor
-												•	Image: imgVisitor
-												•	Button: btnCheckResult
-												•	Label: lblCheckFirstTag
-												•	Label: lblCheckLastTag
-												•	Label: lblCheckFirstProbability
-												•	Label: lblCheckLastProbability
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<td>
+																<strong>Control</strong>
+															</td>
+															<td>
+																<strong>Naming</strong>
+															</td>
+														</tr>
+													</thead>
+		
+													<tbody>
+		
+														<tr>
+															<td>
+																<p>Camera</p>
+															</td>
+															<td>
+																<p>camVisitor</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Image</p>
+															</td>
+															<td>
+																<p>imgVisitor</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Button</p>
+															</td>
+															<td>
+																<p>btnCheckResult</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Label</p>
+															</td>
+															<td>
+																<p>lblCheckFirstTag</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Label</p>
+															</td>
+															<td>
+																<p>lblCheckLastTag</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Label</p>
+															</td>
+															<td>
+																<p>lblCheckFirstProbability</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Label</p>
+															</td>
+															<td>
+																<p>lblCheckLastProbability</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>Label</p>
+															</td>
+															<td>
+																<p>lblCheckLastTag</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
 
 												<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
 													<span class="thumb-info-wrapper">
@@ -527,21 +656,87 @@
 												</span>
 																								
 												<li>Now change the properties for the following controls appropriately.</li>
-												
-												<li>Select the imgVisitor control and change Image=camVisitor.Photo</li>
-												
-												<li>Select the lblCheckFirstTag and change Text=First(First(checkSafeWorkingResult).predictions).tagName</li>
-												
-												<li>Select the lblCheckLastTag and change Text=Last(First(checkSafeWorkingResult).predictions).tagName</li>
-													
-												<li>Select the lblCheckFirstProbability and change Test=Text(First(First(checkSafeWorkingResult).predictions).probability, "[$-en-US]0.##")&"%"</li>
-												
-												<li>Select the lblCheckLastProbability and change Test=Text(Last(First(checkSafeWorkingResult).predictions).probability, "[$-en-US]0.##")&"%"</li>
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<td>
+																<strong>Control</strong>
+															</td>
+															<td>
+																<strong>Method</strong>
+															</td>
+															<td>
+																<strong>Value</strong>
+															</td>
+														</tr>
+													</thead>
+		
+													<tbody>
+														<tr>
+															<td>
+																<p>imgVisitor</p>
+															</td>
+															<td>
+																<p>Image</p>
+															</td>
+															<td>
+																<p>camVisitor.Photo</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>lblCheckFirstTag</p>
+															</td>
+															<td>
+																<p>Text</p>
+															</td>
+															<td>
+																<p>First(First(checkSafeWorkingResult).predictions).tagName</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>lblCheckLastTag</p>
+															</td>
+															<td>
+																<p>Text</p>
+															</td>
+															<td>
+																<p>Last(First(checkSafeWorkingResult).predictions).tagName</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>lblCheckFirstProbability</p>
+															</td>
+															<td>
+																<p>Text</p>
+															</td>
+															<td>
+																<p>Text(First(First(checkSafeWorkingResult).predictions).probability, "[$-en-US]0.##")&"%"</p>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<p>lblCheckLastProbability</p>
+															</td>
+															<td>
+																<p>Text</p>
+															</td>
+															<td>
+																<p>Text(Last(First(checkSafeWorkingResult).predictions).probability, "[$-en-US]0.##")&"%"</p>
+															</td>
+														</tr>
+													</tbody>
+												</table>
 												
 												<li>Create two global variables for the Custom Vision Project ID and PublishName by select «<strong>Screen1</strong>» and change the OnVisible to</li>
-												<p>Set(varCustomVisionClassifyImageProjectID, “Your Custom Vision Project ID reference”);<br>
-												Set(varCustomVisionClassifyImagePublishName, “Your Custom Vision Publish Name reference”)</p>
-												
+												<p>
+													<ul>
+														<li>Set(varCustomVisionClassifyImageProjectID, “Your Custom Vision Project ID reference”);</li>
+														<li>Set(varCustomVisionClassifyImagePublishName, “Your Custom Vision Publish Name reference”)</li>
+													</ul>
+												</p>
 												<li>Select the btnCheckResult control and change OnSelect=</li>
 													<p>
 														// Check visitor photo using Custom Vision AI Model to check if Hard Hat is used<br><br> 
@@ -582,13 +777,109 @@
 											</ol>
 
 											<p>In the test app we used hard coded references for the Project ID and Published Name, Best Practice is to create a solution first and add environment variables to hold the context related variables independent of the environment like Development, Testing and Production. See details how to Use environment variables in Power Platform solutions - Power Apps | Microsoft Learn.</p>
-											<p>Your code for the Screen1 and change OnVisible=<br>
-												// Get Custom Vision Project ID and Published Model Name reference from environment variables<br>
-												Set(varCustomVisionClassifyImageProjectID, LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name' = "ur_customvisionclassifyimageprojectid").Value);<br>
-												Set(varCustomVisionClassifyImagePublishName, LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name' = "ur_customvisionclassifyimagepublishedname").Value);
-											</p>
+											<p>Your code for the Screen1 and change OnVisible as following</p>
+
+											<table class="table table-hover">
+												<thead>
+													<tr>
+														<td>
+															<strong>Control</strong>
+														</td>
+														<td>
+															<strong>Method</strong>
+														</td>
+														<td>
+															<strong>Value</strong>
+														</td>
+													</tr>
+												</thead>
+	
+												<tbody>
+													<tr>
+														<td>
+															<p>Screen1</p>
+														</td>
+														<td>
+															<p>OnVisible</p>
+														</td>
+														<td>
+															<p>// Get Custom Vision Project ID and Published Model Name reference from environment variables<br>
+																Set(varCustomVisionClassifyImageProjectID, LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name' = "ur_customvisionclassifyimageprojectid").Value);<br>
+																Set(varCustomVisionClassifyImagePublishName, LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name' = "ur_customvisionclassifyimagepublishedname").Value);</p>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 
 											<h4>Conclusion</h4>
+											<p>In this blog, we have demonstrated how to use Azure AI Services for Vision and Object recognition in a Power Apps canvas app. We have used the Custom Vision service to create and train a custom image classification model that can recognize different types of flowers. We have also used the Computer Vision service to extract text and other information from images. We have integrated these services with our app using the Cognitive Services Connector. By using Azure AI Services for Vision and Object recognition, we can enhance our app's functionality and user experience with powerful and scalable image analysis capabilities.</p>
+
+											<h5>What are Azure AI services?</h5>
+											<p>Azure AI services help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with out-of-the-box and prebuilt and customizable APIs and models. Example applications include natural language processing for conversations, search, monitoring, translation, speech, vision, and decision-making.</p>
+
+											<table class="table table-hover">
+												<thead>
+													<tr>
+														<td>
+															<strong>Service</strong>
+														</td>
+														<td>
+															<strong>Description</strong>
+														</td>
+													</tr>
+												</thead>
+	
+												<tbody>
+													<tr>
+														<td>
+															<p>Azure OpenAI</p>
+														</td>
+														<td>
+															<p>Perform a wide variety of natural language tasks.</p>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p>Custom Vision</p>
+														</td>
+														<td>
+															<p>Customize image recognition for your business.</p>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p>Face</p>
+														</td>
+														<td>
+															<p>Detect and identify people and emotions in images.</p>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p>Speech</p>
+														</td>
+														<td>
+															<p>Speech to text, text to speech, translation, and speaker recognition.</p>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p>Translator</p>
+														</td>
+														<td>
+															<p>Use AI-powered translation technology to translate more than 100 in-use, at-risk, and endangered languages and dialects.</p>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<p>Vision</p>
+														</td>
+														<td>
+															<p>Analyze content in images and videos.</p>
+														</td>
+													</tr>
+												</tbody>
+											</table>
 
 											<!-- Container - Article footer -->
 											<hr class="solid my-5">
@@ -606,11 +897,15 @@
 												href="https://azure.github.io/Vision-AI-DevKit-Pages/Needed/TrainingData.zip"
 												target="_blank">TrainingData.zip from Vision AI DevKit (GitHub)</a>
 											</li>
-											
 											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
 													href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F"
 													target="_blank">
 													Microsoft Azure free accounts (Docs)</a>
+											</li>
+											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
+												href="https://learn.microsoft.com/en-us/azure/ai-services/what-are-ai-services"
+												target="_blank">
+												Azure AI services (Docs)</a>
 											</li>
 											<li><i class="fab fa-brands fa-microsoft text-2"></i><a
 												href="https://learn.microsoft.com/en-us/power-platform/admin/create-environment"
@@ -669,7 +964,7 @@
 								<li><a href="https://twitter.com/Urs_Ruegg" target="_blank" title="Twitter"><i
 											class="fab fa-twitter text-2"></i></a></li>
 							</ul>
-							<p><strong>urs rüegg</strong> - © Copyright 2022. All Rights Reserved.</p>
+							<p><strong>urs rüegg</strong> - © Copyright 2024. All Rights Reserved.</p>
 						</div>
 					</div>
 				</div>
