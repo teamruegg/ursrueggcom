@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title>Jasmin's CUBOTino Project</title>	
+		<title>Jasmin's CUBOTino Project - Step 2 - Ordering Connection Board</title>	
 
 		<meta name="keywords" content="Urs Rüegg | Website" />
 		<meta name="description" content="The project was developed as part of the Future Day at the Microsoft Innovation Hub Zurich. Jasmin was excited about the idea of building her own robot. The project gives Jasmin the opportunity to gain hands-on experience in robotics, programming, and 3D printing.">
@@ -131,7 +131,7 @@
 							<ul class="breadcrumb d-block text-center">
 								<li><a href="../index.html">Home</a></li>
 								<li><a href="../blog.html">Blog</a></li>
-								<li class="active">Jasmin's CUBOTino Project</li>
+								<li class="active">Jasmin's CUBOTino Project - Step 2 - Ordering Connection Board</li>
 							</ul>
 						</div>
 					</div>
@@ -148,7 +148,7 @@
 									<!-- Container - Article  header-->
 									<article class="post post-large blog-single-post border-0 m-0 p-0">
 										<div class="post-image">
-											<img src="../img/digital/JasminsCubotinoProject/JasminsCubotinoProjectBanner.jpeg" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
+											<img src="../img/digital/JasminsCubotinoProject/JLCPCBAddGerberFiles.png" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />										
 										</div>
 										<p></p>
 		
@@ -172,45 +172,92 @@
 		
 											<!-- Container - Article content -->
 		
-											<h4>The Rubik's Cube: A journey through history and records</h4>
-                                            <h5>Ernő Rubik and the creation of the Rubik's Cube</h5>
-                                            <p>Hungarian architecture professor Ernő Rubik developed the prototype of a three-dimensional cube, the Rubik's Cube. In the years that followed, Rubik used the cube to illustrate three-dimensional space to his students. In 1980, cube fever spread around the world. But at first, only a few people managed to solve the puzzle themselves. It was not until SPIEGEL published a comprehensible solution in 1981 that the general public was able to align the different planes of the cube.</p>
+											<h4>Step 2 - Order the CUBOTino connection board</h4>
+                                            <p>For the Raspberry Pi connection board, Chad (Vanblokland) has created and provided the Gerber files to order the board from a board manufacturer. Only the few components required then need to be soldered onto the board received. This makes assembly much easier and ensures that all connections are correct and reliable. The carefully designed Gerber files ensure that the board is optimally matched to the Raspberry Pi and supports all the necessary connections and functions.</p>
 
-                                            <h5>What is «God's number»?</h5>
-                                            <p>«God's number» or «God's algorithm» is the smallest possible number of moves required to solve the Rubik's Cube in any given position. Scientists have spent a lot of time trying to figure out what this number is. The puzzle was only solved in 2010, 30 years after the tricky cube was introduced.</p>
+                                            <h5>Order PCB board via JLCPCB</h5>
+											<ol>
+												<li>Download Gerber Files from <a href="https://github.com/AndreaFavero71/cubotino/tree/main/connections_board/gerber" target="_blank">GitHub Repository AndreaFavero71 cubotino</a>
+													<p>
+														<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+															<span class="thumb-info-wrapper">
+																<img src="../img/digital/JasminsCubotinoProject/GitHubRepository_cubotinoconnections_board_gerberfiles.png"
+																	class="img-fluid" alt="Download Gerber Files from GitHub Repository AndreaFavero71 cubotino.">
+																<span class="thumb-info-title">
+																	<span class="thumb-info-inner line-height-1">Gerber Files</span>
+																	<span class="thumb-info-type opacity-6">Download Gerber Files from GitHub Repository AndreaFavero71 cubotino.</span>
+																</span>
+															</span>
+														</span>
+													</p>
+												</li>
+												<li>Zip all Files from the \gerber folder into one Zip File «cubertino.zip».</li>
+												<li>Open the JLCPCB Website <a href="https://jlcpcb.com/" target="_blank">https://jlcpcb.com</a> , Login and select order now to create a new order.
+													<p>
+														<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+															<span class="thumb-info-wrapper">
+																<img src="../img/digital/JasminsCubotinoProject/JLCPCBHome.png"
+																	class="img-fluid" alt="Open the JLCPCB Website. Login and select order now to create a new order.">
+																<span class="thumb-info-title">
+																	<span class="thumb-info-inner line-height-1">JLCPCB Website</span>
+																	<span class="thumb-info-type opacity-6">Open the JLCPCB Website. Login and select order now to create a new order.</span>
+																</span>
+															</span>
+														</span>														
+													</p>
+												</li>
+												<li>Add gerber files (Zip File «cubertino.zip»). 
+													<p>
+														<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+															<span class="thumb-info-wrapper">
+																<img src="../img/digital/JasminsCubotinoProject/JLCPCBAddGerberFiles.png"
+																	class="img-fluid" alt="Add gerber files (Zip File «cubertino.zip»).">
+																<span class="thumb-info-title">
+																	<span class="thumb-info-inner line-height-1">Add Gerber Files</span>
+																	<span class="thumb-info-type opacity-6">Add gerber files (Zip File «cubertino.zip»)</span>
+																</span>
+															</span>
+														</span>	
+													</p>
+												</li>
+												<li>Save to cart and within 2-4 business days you receive the board</li>
+											</ol>
 
-                                            <h5>Why did it take so long?</h5>
-                                            <p>There are over 43 trillion (that's 43 with 18 zeros!) possible starting positions for a Rubik's cube. There are 18 possible moves from each position. No computer in the world is able to calculate the optimal number of moves. In 1992, the physics and mathematics teacher Herbert Kociemba succeeded in writing an algorithm that reduced the possibilities to 20 billion. Modern computers can easily calculate this. This algorithm was improved in the following years by computer scientist Tomas Rokicki. The result? No matter what the 3x3 is, it can be solved in 20 moves. So the «number of God» is 20!</p>
-
-                                            <h4>The CUBOTino Robot</h4>
-
-                                            <p>CUBOTino Autonomous is a small, fully 3D printed robot that solves the Rubik's Cube using a Raspberry Pi Zero 2 and a PiCamera. The robot takes about 90 seconds to solve the cube. The PiCamera captures the state of the cube, while the Raspberry Pi Zero 2 analyzes the images and calculates a near-optimal solution using the Kociemba algorithm. CUBOTino Autonomous is an impressive example of how modern technology and 3D printing can be combined to solve complex tasks in a simple and accessible way.</p>
-
-                                            <div class="ratio ratio-16x9">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/dEOLhvVMcUg" frameborder="0" allowfullscreen></iframe>
-                                            </div>
-                                            
                                             <p></p>
-                                            <h5>The name CUbe+roBOT+ino</h5>
-                                            <p>The name of the robot is CUBOTino. Besides the obvious combination of CUbe+roBOT, «ino» is the Italian suffix for small... a reference to Andrea Favero's origins and the robot's very small dimensions.</p>
 
-                                            <h4>Jasmin's CUBOTino Project</h4>
-                                            <p>The project was developed as part of the Future Day at the Microsoft Innovation Hub Zurich. Jasmin was excited about the idea of building her own robot. The project gives Jasmin the opportunity to gain hands-on experience in robotics, programming, and 3D printing.</p>
-                                            <p>The project steps can be broken down into</p>
-                                            <ol>
-                                                <li>purchasing components</li>
-                                                <li><a href="blogJasminsCUBOTinoProjectOrderingConnectionBoard.html">ordering the CUBERTino connection board.</a></li>
-                                                <li>installing the Raspberry Pi Zero 2</li>
-                                                <li>testing and adjusting the servos</li>
-                                                <li>print 3D parts</li>
-                                                <li>assemble 3D parts</li>
-                                                <li>fine-tune and operate the robot</li>
-                                                <li>run CUBOTino to solve autonomous</li>
-                                            </ol>
+                                            <h4>CUBOTino connection board</h4>
 
-                                            <p>Let’s now proceed and build the CUBOTino robot.</p>
+                                            <p>...</p>
 
-                                            <p>Special thanks to Andrea Favero, inventor of the CUPERTino Makers project. Chad Vanblokland, inventor of the CUBERTino Connection Board and for sharing the Gerber files to order it. And special thanks to the Microsoft Innovation Hub Zurich team, Rene Knöffel (the orchestrator) and Alberto Huber (the maker) for facilitating and supporting Jasmin's project.</p></p>
+											<h5>CUBOTino Connection Board Top View</h5>
+											<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/JasminsCubotinoProject/CUBOTinoConnectionBoardTop.png"
+														class="img-fluid" alt="CUBOTino Connection Board Top View">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Connection Board</span>
+														<span class="thumb-info-type opacity-6">CUBOTino Connection Board Top View</span>
+													</span>
+												</span>
+											</span>	
+
+											<p>...</p>
+
+											<h5>CUBOTino Connection Board Bottom View</h5>
+											<span class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-centered-icons">
+												<span class="thumb-info-wrapper">
+													<img src="../img/digital/JasminsCubotinoProject/CUBOTinoConnectionBoardBottom.png"
+														class="img-fluid" alt="CUBOTino Connection Board Top View">
+													<span class="thumb-info-title">
+														<span class="thumb-info-inner line-height-1">Connection Board</span>
+														<span class="thumb-info-type opacity-6">CUBOTino Connection Board Bottom View</span>
+													</span>
+												</span>
+											</span>	
+
+											<p>...</p>
+
+                                            <p>Special thanks to Andrea Favero, inventor of the CUPERTino Makers project. Chad Vanblokland, inventor of the CUBERTino Connection Board and for sharing the Gerber files to order it.</p></p>
 		
 											<!-- Container - Article footer -->
 											<hr class="solid my-5">
@@ -218,28 +265,8 @@
 		
 											<h4 class="mb-3">References</h4>
 											<li><i class="fab fa-microsoft text-2"></i><a
-													href="https://https://www.rubiks.com/history"
-													target="_blank"> The Official Rubik's Cube</a>
-                                            </li>
-											<li><i class="fab fa-microsoft text-2"></i><a
-													href="https://www.spiegel.de/spiegel/a-258266.html"
-													target="_blank"> Zauberwürfel: "Schrei Hurra! Schmeiss 'ne Runde!" - (DER SPIEGEL)</a>
-											</li>
-											<li><i class="fab fa-microsoft text-2"></i><a
-													href="https://de.wikipedia.org/wiki/Ern%C5%91_Rubik"
-													target="_blank"> Ernő Rubik (Wikipedia)</a>
-                                            </li>
-											<li><i class="fab fa-microsoft text-2"></i><a
 													href="https://www.instructables.com/CUBOTino-Autonomous-Small-3D-Printed-Rubiks-Cube-R/"
 													target="_blank"> CUBOTino Autonomous Rubik's Cube Robot (Raspberry Pi Zero 2, PiCamera) - (Instructables)</a>
-                                            </li>
-                                            <li><i class="fab fa-microsoft text-2"></i><a
-                                                href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/"
-                                                target="_blank"> Buy a Raspberry Pi Zero 2 W (Raspberry Pi)</a>
-                                            </li>		
-                                            <li><i class="fab fa-microsoft text-2"></i><a
-                                                href="https://www.raspberrypi.com/software/"
-                                                target="_blank"> Raspberry Pi OS – Raspberry Pi Imager (Download)</a>
                                             </li>
                                             <li><i class="fab fa-github text-2"></i><a
                                                 href="https://github.com/AndreaFavero71/cubotino/tree/main/connections_board/gerber"
